@@ -7,8 +7,3 @@ export const getCurrentTimeInLocation = (timezone) => {
   const UTCOffsetMinutes = timezone / 60;
   return moment().utcOffset(UTCOffsetMinutes);
 };
-
-export const hoursRemaining = (currentDate, event) => {
-  console.log(hoursRemaining);
-  return moment(currentDate).to(moment(event, 'hours'));
-};

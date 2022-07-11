@@ -18,24 +18,3 @@ const WeatherInfo = ({ temperature, weather, sunrise, sunset, isDaytime }) => {
 };
 
 export default WeatherInfo;
-
-//
-
-// console.log(
-//   'current Time',
-//   currentTimeInLocation.clone().format('HH:mm a'),
-//   'sunrise',
-//   sunriseTimeInLocation.clone().format('HH:mm a'),
-//   'sunset',
-//   sunsetTimeInLocation.clone().format('HH:mm a'),
-//   'hours',
-//   'currentTime'
-
-// const timeUntilEvent = currentTimeInLocation.diff(sunriseTimeInLocation, 'hours');
-
-// time until sunset current time, sunset in utc time
-
-//
-
-// 'timeUntilSunrise',
-// timeUntilEvent
