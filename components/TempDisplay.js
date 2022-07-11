@@ -6,6 +6,7 @@ const TempDisplay = ({ weather, temperature, sunrise, sunset, isDaytime }) => (
     <div className="weather-icon relative w-72 flex justify-center items-center">
       <Icon iconID={weather?.icon} />
     </div>
+
     {weather && (
       <WeatherInfo
         weather={weather}

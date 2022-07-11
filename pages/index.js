@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { WEATHER_API_BASE_URL } from '../constants/constants';
+import { DARK_THEME, LIGHT_THEME, WEATHER_API_BASE_URL } from '../constants/constants';
 import SearchForm from '../components/SearchForm';
 import TempDisplay from '../components/TempDisplay';
 import HeroLayout from '../components/HeroLayout';
@@ -9,14 +9,15 @@ import 'moment-timezone';
 import { getCurrentTimeInLocation, getEventTimeInLocation } from '../utilities/utilities';
 
 export const Home = () => {
-  const [location, setLocation] = useState('Dallas');
+  const [location, setLocation] = useState('');
   const [weather, setWeather] = useState(null);
   const [temperature, setTemperature] = useState(null);
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(LIGHT_THEME);
   const [sunrise, setSunrise] = useState(null);
   const [sunset, setSunset] = useState(null);
   const [timezone, setTimezone] = useState(null);
   const [isDaytime, setIsDaytime] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   const handleLocation = (e) => {
     setLocation(e.target.value);
@@ -25,6 +26,13 @@ export const Home = () => {
   const convertKelvinToCelsius = (kelvinTemp) => kelvinTemp - 273.15;
 
   const searchLocation = async () => {
+    // don't allow for API spamming
+    if (loading) {
+      return;
+    }
+
+    setLoading(true);
+
     const requestURL = `${WEATHER_API_BASE_URL}?q=${location}&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`;
     try {
       const response = await axios.get(requestURL);
@@ -37,12 +45,14 @@ export const Home = () => {
       setSunrise(data.sys.sunrise);
       setSunset(data.sys.sunset);
       setTimezone(data.timezone);
+      setLoading(false);
     } catch (error) {
       console.error(error);
     }
   };
 
   const handleKeypress = (e) => {
+    console.log(e.key);
     if (e.key === 'Enter') {
       searchLocation();
     }
@@ -62,10 +72,10 @@ export const Home = () => {
       // updates display for day and night in location
 
       if (isDaytimeInLocation()) {
-        setTheme('light');
+        setTheme(LIGHT_THEME);
         setIsDaytime(true);
       } else {
-        setTheme('dark');
+        setTheme(DARK_THEME);
         setIsDaytime(false);
       }
     };
@@ -78,8 +88,9 @@ export const Home = () => {
         <SearchForm
           location={location}
           handleLocation={handleLocation}
-          handleKeypres={handleKeypress}
+          handleKeypress={handleKeypress}
           searchLocation={searchLocation}
+          loading={loading}
         />
         <TempDisplay
           weather={weather}

@@ -1,6 +1,7 @@
 import Button from './Button';
+import Loader from './LoadingSpinner';
 
-const SearchForm = ({ location, handleLocation, handleKeypress, searchLocation }) => (
+const SearchForm = ({ location, handleLocation, handleKeypress, searchLocation, loading }) => (
   <div className="form-control w-full max-w-s">
     <div className="input-group input-group-lg flex justify-center">
       <input
@@ -12,9 +13,16 @@ const SearchForm = ({ location, handleLocation, handleKeypress, searchLocation }
         onKeyPress={handleKeypress}
       />
 
-      <Button styles="btn-primary btn-lg" callback={searchLocation}>
-        Search
-      </Button>
+      {!loading && (
+        <Button styles="btn btn-primary btn-lg" callback={searchLocation}>
+          Search
+        </Button>
+      )}
+      {loading && (
+        <Button styles="btn btn-lg">
+          <Loader />
+        </Button>
+      )}
     </div>
   </div>
 );
