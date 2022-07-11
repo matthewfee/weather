@@ -39,6 +39,8 @@ export const Home = () => {
       const { data } = response;
       setWeather(data.weather[0]);
 
+      console.log(data);
+
       const celsiusTemp = Math.round(convertKelvinToCelsius(data.main.temp));
       setTemperature(celsiusTemp);
 
@@ -75,6 +77,8 @@ export const Home = () => {
       const cSTring = currentTimeInLocation.clone().format(DATE_FORMAT);
       const sunriseString = sunriseTimeInLocation.clone().format(DATE_FORMAT);
       const setString = sunsetTimeInLocation.clone().format(DATE_FORMAT);
+
+      console.log('current', currentTimeInLocation, 'sunset', sunriseTimeInLocation);
 
       const isDaytimeInLocation = () => moment(cSTring).isBetween(sunriseString, setString);
 
