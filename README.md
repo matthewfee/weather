@@ -31,3 +31,6 @@ Icons automaticaly adjust based on the weather in a specific city:
 ![San Francisco](https://github.com/matthewfee/weather/blob/main/public/icons/50d.png?raw=true)
 
 Lighting also adjust based on whether it is currently day or night.
+[Dynamic Lighting](https://imgur.com/a/eLTJMEu)
+
+All API date is provided through the [Open Weather API](https://openweathermap.org/api).
