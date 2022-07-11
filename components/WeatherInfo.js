@@ -17,6 +17,8 @@ const WeatherInfo = ({ temperature, weather, sunrise, sunset, isDaytime, timezon
     sunsetTimeInLocation.add('1', 'days');
   }
 
+  // generate strings from data to calculate time remaining
+
   const cSTring = currentTimeInLocation.clone().format(DATE_FORMAT);
   const sunriseString = sunriseTimeInLocation.clone().format(DATE_FORMAT);
   const sunsetString = sunsetTimeInLocation.clone().format(DATE_FORMAT);
