@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import axios from 'axios';
-import 'moment-timezone';
+import moment from 'moment-timezone';
 import { useState, useEffect } from 'react';
 import { DARK_THEME, LIGHT_THEME, WEATHER_API_BASE_URL } from '../constants/constants';
 import SearchForm from '../components/SearchForm';
@@ -39,6 +39,8 @@ export const Home = () => {
       const { data } = response;
       setWeather(data.weather[0]);
 
+      console.log(data);
+
       const celsiusTemp = Math.round(convertKelvinToCelsius(data.main.temp));
       setTemperature(celsiusTemp);
 
@@ -62,12 +64,21 @@ export const Home = () => {
     const calculateTimeDifferences = () => {
       // calculates UTC offset for location
 
+      if (!weather) {
+        return;
+      }
+
       const currentTimeInLocation = getCurrentTimeInLocation(timezone);
       const sunriseTimeInLocation = getEventTimeInLocation(sunrise, timezone);
       const sunsetTimeInLocation = getEventTimeInLocation(sunset, timezone);
 
-      const isDaytimeInLocation = () =>
-        currentTimeInLocation.isBetween(sunriseTimeInLocation, sunsetTimeInLocation);
+      // conver to string format for calculation of whether it is day or night
+
+      const cSTring = currentTimeInLocation.clone().format('YYYY-MM-DD HH:mm');
+      const sunriseString = sunriseTimeInLocation.clone().format('YYYY-MM-DD HH:mm');
+      const setString = sunsetTimeInLocation.clone().format('YYYY-MM-DD HH:mm');
+
+      const isDaytimeInLocation = () => moment(cSTring).isBetween(sunriseString, setString);
 
       // updates display for day and night in location
 
@@ -83,7 +94,7 @@ export const Home = () => {
   }, [sunset, sunrise, timezone]);
 
   return (
-    <wrapper data-theme={theme}>
+    <div data-theme={theme}>
       <HeroLayout isDaytime={isDaytime}>
         {weather && <h1>{isDaytime ? 'day' : 'night'}</h1>}
         {!weather && <h1 className="text-white">search the weather...</h1>}
@@ -100,9 +111,10 @@ export const Home = () => {
           sunrise={sunrise}
           sunset={sunset}
           isDaytime={isDaytime}
+          timezone={timezone}
         />
       </HeroLayout>
-    </wrapper>
+    </div>
   );
 };
 
