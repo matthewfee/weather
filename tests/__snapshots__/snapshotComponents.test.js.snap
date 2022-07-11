@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<button
+  className="btn btn-primary btn-lg w-28"
+  onClick={[Function]}
+  type="button"
+/>
+`;
+
+exports[`renders correctly 2`] = `
+<div
+  className="hero min-h-screen"
+  style={
+    Object {
+      "backgroundImage": "url(https://placeimg.com/1000/800/arch)",
+    }
+  }
+>
+  <div
+    className="hero-overlay bg-opacity-50"
+  />
+  <div
+    className="hero-content w-full text-center text-neutral-content max-w-md flex flex-col items-center rounded-md"
+  />
+</div>
+`;
+
+exports[`renders correctly 3`] = `
+<span
+  style={
+    Object {
+      "background": "none",
+      "border": 0,
+      "boxSizing": "border-box",
+      "display": "inline-block",
+      "height": "initial",
+      "margin": 0,
+      "maxWidth": "100%",
+      "opacity": 1,
+      "overflow": "hidden",
+      "padding": 0,
+      "position": "relative",
+      "width": "initial",
+    }
+  }
+>
+  <span
+    style={
+      Object {
+        "background": "none",
+        "border": 0,
+        "boxSizing": "border-box",
+        "display": "block",
+        "height": "initial",
+        "margin": 0,
+        "maxWidth": "100%",
+        "opacity": 1,
+        "padding": 0,
+        "width": "initial",
+      }
+    }
+  >
+    <img
+      alt=""
+      aria-hidden={true}
+      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27200%27%20height=%27200%27/%3e"
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "display": "block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "padding": 0,
+          "width": "initial",
+        }
+      }
+    />
+  </span>
+  <img
+    alt="icon"
+    data-nimg="intrinsic"
+    decoding="async"
+    onError={[Function]}
+    onLoad={[Function]}
+    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+    style={
+      Object {
+        "border": "none",
+        "bottom": 0,
+        "boxSizing": "border-box",
+        "display": "block",
+        "height": 0,
+        "left": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
+        "maxWidth": "100%",
+        "minHeight": "100%",
+        "minWidth": "100%",
+        "objectFit": undefined,
+        "objectPosition": undefined,
+        "padding": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "width": 0,
+      }
+    }
+  />
+  <noscript>
+    <img
+      alt="icon"
+      data-nimg="intrinsic"
+      decoding="async"
+      loading="lazy"
+      src="/_next/image?url=%2Ficons%2F04d.png&w=640&q=75"
+      srcSet="/_next/image?url=%2Ficons%2F04d.png&w=256&q=75 1x, /_next/image?url=%2Ficons%2F04d.png&w=640&q=75 2x"
+      style={
+        Object {
+          "border": "none",
+          "bottom": 0,
+          "boxSizing": "border-box",
+          "display": "block",
+          "height": 0,
+          "left": 0,
+          "margin": "auto",
+          "maxHeight": "100%",
+          "maxWidth": "100%",
+          "minHeight": "100%",
+          "minWidth": "100%",
+          "objectFit": undefined,
+          "objectPosition": undefined,
+          "padding": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "width": 0,
+        }
+      }
+    />
+  </noscript>
+</span>
+`;

@@ -33,4 +33,12 @@ module.exports = {
     'import/prefer-default-export': [0],
   },
   ignorePatterns: ['!**/*', '.storybook/*'],
+  overrides: [
+    {
+      files: ['**/*.spec.js', '**/*.test.js', '**/*.spec.jsx'],
+      env: {
+        jest: true,
+      },
+    },
+  ],
 };
