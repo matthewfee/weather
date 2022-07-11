@@ -1,10 +1,11 @@
+import { DATE_FORMAT } from '../constants/constants';
 import { getCurrentTimeInLocation, getEventTimeInLocation } from '../utilities/utilities';
 
 const WeatherInfo = ({ temperature, weather, sunrise, sunset, isDaytime, timezone }) => {
   const currentTimeInLocation = getCurrentTimeInLocation(timezone);
   const sunriseTimeInLocation = getEventTimeInLocation(sunrise, timezone);
   const sunsetTimeInLocation = getEventTimeInLocation(sunset, timezone);
-  const cSTring = currentTimeInLocation.clone().format('YYYY-MM-DD HH:mm');
+  const cSTring = currentTimeInLocation.clone().format(DATE_FORMAT);
 
   // add day before calcualting date if time is past
 

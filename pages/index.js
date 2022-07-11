@@ -2,7 +2,7 @@
 import axios from 'axios';
 import moment from 'moment-timezone';
 import { useState, useEffect } from 'react';
-import { DARK_THEME, LIGHT_THEME, WEATHER_API_BASE_URL } from '../constants/constants';
+import { DARK_THEME, DATE_FORMAT, LIGHT_THEME, WEATHER_API_BASE_URL } from '../constants/constants';
 import SearchForm from '../components/SearchForm';
 import TempDisplay from '../components/TempDisplay';
 import HeroLayout from '../components/HeroLayout';
@@ -39,8 +39,6 @@ export const Home = () => {
       const { data } = response;
       setWeather(data.weather[0]);
 
-      console.log(data);
-
       const celsiusTemp = Math.round(convertKelvinToCelsius(data.main.temp));
       setTemperature(celsiusTemp);
 
@@ -74,9 +72,9 @@ export const Home = () => {
 
       // conver to string format for calculation of whether it is day or night
 
-      const cSTring = currentTimeInLocation.clone().format('YYYY-MM-DD HH:mm');
-      const sunriseString = sunriseTimeInLocation.clone().format('YYYY-MM-DD HH:mm');
-      const setString = sunsetTimeInLocation.clone().format('YYYY-MM-DD HH:mm');
+      const cSTring = currentTimeInLocation.clone().format(DATE_FORMAT);
+      const sunriseString = sunriseTimeInLocation.clone().format(DATE_FORMAT);
+      const setString = sunsetTimeInLocation.clone().format(DATE_FORMAT);
 
       const isDaytimeInLocation = () => moment(cSTring).isBetween(sunriseString, setString);
 

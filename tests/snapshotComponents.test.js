@@ -5,12 +5,7 @@ import Icon from '../components/Icon';
 
 it('renders correctly', () => {
   const tree = TestRenderer.create(
-    <Button
-      callback={() => {
-        console.log('TEST');
-      }}
-      styles="btn-primary btn-lg w-28"
-    />
+    <Button callback={() => {}} styles="btn-primary btn-lg w-28" />
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });
