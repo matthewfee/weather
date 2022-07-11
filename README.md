@@ -27,4 +27,4 @@ To test the project, use the script `npm run test`. Testing is automated with sn
 
 Icons automaticaly adjust based on the weather in a specific city:
 
-![San Francisco](../icons/50d.png)
+![San Francisco](https://github.com/matthewfee/weather/blob/main/public/icons/50d.png?raw=true)
