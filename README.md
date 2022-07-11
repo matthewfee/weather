@@ -22,3 +22,9 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ## Testing
 
 To test the project, use the script `npm run test`. Testing is automated with snapshots through Jest.
+
+## Dynamic City Weather
+
+Icons automaticaly adjust based on the weather in a specific city:
+
+![San Francisco](https://imgur.com/a/eLTJMEu)
