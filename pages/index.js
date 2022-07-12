@@ -50,6 +50,8 @@ export const Home = () => {
       }
     }
 
+    // API does not recognize Cambridge, MA by default
+
     if (location === 'Cambridge, MA') {
       locationString = 'Cambridge';
     }
@@ -65,7 +67,6 @@ export const Home = () => {
       setSunrise(data.sys.sunrise);
       setSunset(data.sys.sunset);
       setTimezone(data.timezone);
-      console.log(data);
       setLoading(false);
     } catch (error) {
       console.error(error);
