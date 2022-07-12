@@ -4,7 +4,6 @@ const HeroLayout = ({ children, isDaytime }) => (
   <div
     className="hero min-h-screen"
     style={{
-      backgroundSize: 'cover',
       backgroundImage: `${isDaytime ? dayBackgroundImageString : nightBackgroundImageString}`,
     }}
   >

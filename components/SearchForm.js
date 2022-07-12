@@ -7,7 +7,7 @@ const SearchForm = ({ location, handleLocation, handleKeypress, searchLocation, 
       <input
         type="text"
         placeholder="City"
-        className="input input-bordered input-lg input-primary text-2xl text-base-content"
+        className="input input-bordered input-lg input-primary text-2xl text-base-content w-64"
         value={location}
         onChange={handleLocation}
         onKeyPress={handleKeypress}

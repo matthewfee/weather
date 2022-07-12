@@ -6,7 +6,11 @@ import { DARK_THEME, DATE_FORMAT, LIGHT_THEME, WEATHER_API_BASE_URL } from '../c
 import SearchForm from '../components/SearchForm';
 import TempDisplay from '../components/TempDisplay';
 import HeroLayout from '../components/HeroLayout';
-import { getCurrentTimeInLocation, getEventTimeInLocation } from '../utilities/utilities';
+import {
+  getCurrentTimeInLocation,
+  getEventTimeInLocation,
+  convertKelvinToCelsius,
+} from '../utilities/utilities';
 
 export const Home = () => {
   const [location, setLocation] = useState('');
@@ -22,8 +26,6 @@ export const Home = () => {
   const handleLocation = (e) => {
     setLocation(e.target.value);
   };
-
-  const convertKelvinToCelsius = (kelvinTemp) => kelvinTemp - 273.15;
 
   const searchLocation = async () => {
     // don't allow for API spamming

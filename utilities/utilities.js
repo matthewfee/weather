@@ -7,3 +7,5 @@ export const getCurrentTimeInLocation = (timezone) => {
   const UTCOffsetMinutes = timezone / 60;
   return moment().utcOffset(UTCOffsetMinutes);
 };
+
+export const convertKelvinToCelsius = (kelvinTemp) => kelvinTemp - 273.15;
