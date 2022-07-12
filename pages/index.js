@@ -35,7 +35,13 @@ export const Home = () => {
 
     setLoading(true);
 
-    const requestURL = `${WEATHER_API_BASE_URL}?q=${location}&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`;
+    let locationString = location;
+
+    if (location === 'Cambridge') {
+      locationString = 'Cambridge, UK';
+    }
+
+    const requestURL = `${WEATHER_API_BASE_URL}?q=${locationString}&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`;
     try {
       const response = await axios.get(requestURL);
       const { data } = response;
@@ -46,6 +52,7 @@ export const Home = () => {
       setSunrise(data.sys.sunrise);
       setSunset(data.sys.sunset);
       setTimezone(data.timezone);
+      console.log(data);
       setLoading(false);
     } catch (error) {
       console.error(error);
