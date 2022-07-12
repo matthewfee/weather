@@ -3,11 +3,11 @@ import Loader from './LoadingSpinner';
 
 const SearchForm = ({ location, handleLocation, handleKeypress, searchLocation, loading }) => (
   <div className="form-control w-full max-w-s flex-col items-center relative">
-    <div className="input-group input-group-lg flex justify-center ">
+    <div className="input-group input-group-lg w-full flex justify-center p-0 m-0 ">
       <input
         type="text"
         placeholder="City"
-        className="input input-bordered input-lg input-primary text-2xl text-base-content w-64"
+        className="input input-bordered input-lg input-primary text-2xl text-base-content min-w-[50%] max-w-[60vw]"
         value={location}
         onChange={handleLocation}
         onKeyPress={handleKeypress}
