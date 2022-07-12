@@ -3,8 +3,8 @@ import SunsetIndicator from './SunsetIndicator';
 import WeatherInfo from './WeatherInfo';
 
 const TempDisplay = ({ weather, temperature, sunrise, sunset, isDaytime, timezone }) => (
-  <div className="temperature-result-container flex container justify-center w-full p-1 m-0 h-60 relative">
-    <div className="weather-icon w-72 flex justify-center items-center relative">
+  <div className="temperature-result-container flex container justify-center p-1 m-0 h-60 relative">
+    <div className="weather-icon w-[150px] mx-2 flex justify-center items-center relative">
       <Icon iconID={weather?.icon} />
     </div>
 

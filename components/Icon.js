@@ -4,7 +4,7 @@ const Icon = ({ iconID }) => {
   if (!iconID) {
     return null;
   }
-  return <Image src={`/icons/${iconID}.png`} alt="icon" width="200px" height="200px" />;
+  return <Image src={`/icons/${iconID}.png`} alt="icon" width="150px" height="150px" />;
 };
 
 export default Icon;
