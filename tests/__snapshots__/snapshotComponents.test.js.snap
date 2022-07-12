@@ -10,18 +10,20 @@ exports[`renders correctly 1`] = `
 
 exports[`renders correctly 2`] = `
 <div
-  className="hero min-h-screen"
+  className="hero hero-background h-screen min-h-[110vh] w-screen min-w-fit"
   style={
     Object {
-      "backgroundImage": "url(https://placeimg.com/1000/800/arch)",
+      "backgroundImage": "linear-gradient(to right bottom, rgba(213, 246, 255, 0.5), rgba(3, 76, 140, 1)), url(https://picsum.photos/2000/1400)",
+      "backgroundPosition": "center bottom",
+      "backgroundSize": "cover",
     }
   }
 >
   <div
-    className="hero-overlay bg-opacity-60"
+    className="hero-overlay"
   />
   <div
-    className="hero-content w-full text-center text-neutral-content max-w-md flex flex-col items-center rounded-md"
+    className="hero-content w-full text-center text-neutral-content max-w-md flex flex-col items-center rounded-md p-0 m-0"
   />
 </div>
 `;
@@ -64,7 +66,7 @@ exports[`renders correctly 3`] = `
     <img
       alt=""
       aria-hidden={true}
-      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27200%27%20height=%27200%27/%3e"
+      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27150%27%20height=%27150%27/%3e"
       style={
         Object {
           "background": "none",
@@ -116,8 +118,8 @@ exports[`renders correctly 3`] = `
       data-nimg="intrinsic"
       decoding="async"
       loading="lazy"
-      src="/_next/image?url=%2Ficons%2F04d.png&w=640&q=75"
-      srcSet="/_next/image?url=%2Ficons%2F04d.png&w=256&q=75 1x, /_next/image?url=%2Ficons%2F04d.png&w=640&q=75 2x"
+      src="/_next/image?url=%2Ficons%2F04d.png&w=384&q=75"
+      srcSet="/_next/image?url=%2Ficons%2F04d.png&w=256&q=75 1x, /_next/image?url=%2Ficons%2F04d.png&w=384&q=75 2x"
       style={
         Object {
           "border": "none",
