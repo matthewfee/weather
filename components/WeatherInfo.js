@@ -1,40 +1,8 @@
-import moment from 'moment';
-import { DATE_FORMAT } from '../constants/constants';
-import { getCurrentTimeInLocation, getEventTimeInLocation } from '../utilities/utilities';
-
-const WeatherInfo = ({ temperature, weather, sunrise, sunset, isDaytime, timezone }) => {
-  const currentTimeInLocation = getCurrentTimeInLocation(timezone);
-  const sunriseTimeInLocation = getEventTimeInLocation(sunrise, timezone);
-  const sunsetTimeInLocation = getEventTimeInLocation(sunset, timezone);
-
-  // add day before calcualting date if time is past
-
-  const currentString = currentTimeInLocation.clone().format(DATE_FORMAT);
-
-  if (sunriseTimeInLocation.isSameOrBefore(currentString)) {
-    sunriseTimeInLocation.add('1', 'days');
-  }
-
-  if (sunriseTimeInLocation.isSameOrBefore(currentString)) {
-    sunsetTimeInLocation.add('1', 'days');
-  }
-
-  // generate strings from data to calculate time remaining
-
-  const sunriseString = sunriseTimeInLocation.clone().format(DATE_FORMAT);
-  const sunsetString = sunsetTimeInLocation.clone().format(DATE_FORMAT);
-
-  const timeUntilSunset = moment(currentString).to(sunsetString, 'hours');
-  const timeUntilSunrise = moment(currentString).to(sunriseString, 'hours');
-
-  return (
-    <div className="temperature text-xl container items-center justify-center flex flex-col text-white">
-      <div className="temperature text-4xl">{temperature}°C</div>
-      <div className="weather-description text-2xl container">{weather?.description}</div>
-      {!isDaytime && <div className="sunrise"> sunrise in {timeUntilSunrise}</div>}
-      {isDaytime && <div className="sunset">sunset in {timeUntilSunset}</div>}
-    </div>
-  );
-};
+const WeatherInfo = ({ temperature, weather }) => (
+  <div className="temperature text-xl container items-center justify-center flex flex-col text-white">
+    <div className="temperature text-6xl">{temperature}°C</div>
+    <div className="weather-description text-xl container">{weather?.description}</div>
+  </div>
+);
 
 export default WeatherInfo;
