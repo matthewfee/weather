@@ -89,7 +89,7 @@ export const Home = () => {
       const sunriseTimeInLocation = getEventTimeInLocation(sunrise, timezone);
       const sunsetTimeInLocation = getEventTimeInLocation(sunset, timezone);
 
-      // conver to string format for calculation of whether it is day or night
+      // convert to string format for calculation of whether it is day or night
 
       const cSTring = currentTimeInLocation.clone().format(DATE_FORMAT);
       const sunriseString = sunriseTimeInLocation.clone().format(DATE_FORMAT);
