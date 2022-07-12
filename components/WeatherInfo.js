@@ -9,22 +9,23 @@ const WeatherInfo = ({ temperature, weather, sunrise, sunset, isDaytime, timezon
 
   // add day before calcualting date if time is past
 
-  if (sunriseTimeInLocation.isSameOrBefore(currentTimeInLocation)) {
+  const currentString = currentTimeInLocation.clone().format(DATE_FORMAT);
+
+  if (sunriseTimeInLocation.isSameOrBefore(currentString)) {
     sunriseTimeInLocation.add('1', 'days');
   }
 
-  if (sunriseTimeInLocation.isSameOrBefore(currentTimeInLocation)) {
+  if (sunriseTimeInLocation.isSameOrBefore(currentString)) {
     sunsetTimeInLocation.add('1', 'days');
   }
 
   // generate strings from data to calculate time remaining
 
-  const cSTring = currentTimeInLocation.clone().format(DATE_FORMAT);
   const sunriseString = sunriseTimeInLocation.clone().format(DATE_FORMAT);
   const sunsetString = sunsetTimeInLocation.clone().format(DATE_FORMAT);
 
-  const timeUntilSunset = moment(cSTring).to(sunsetString, 'hours');
-  const timeUntilSunrise = moment(cSTring).to(sunriseString, 'hours');
+  const timeUntilSunset = moment(currentString).to(sunsetString, 'hours');
+  const timeUntilSunrise = moment(currentString).to(sunriseString, 'hours');
 
   return (
     <div className="temperature text-xl container items-center justify-center flex flex-col text-white">
