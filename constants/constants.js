@@ -6,11 +6,11 @@ export const LIGHT_THEME = 'light';
 
 export const DATE_FORMAT = 'YYYY-MM-DD HH:mm';
 
-const dayColorOne = `rgba(213, 246, 255, 0.2)`;
-const dayColorTwo = `rgba(3, 76, 140, 0.7)`;
+const dayColorOne = `rgba(213, 246, 255, 0.5)`;
+const dayColorTwo = `rgba(3, 76, 140, 1)`;
 
-const nightColorOne = `rgba(242, 240, 136, 0.2)`;
-const nightColorTwo = `rgba(47, 47, 50, 0.95)`;
+const nightColorOne = `rgba(242, 240, 136, 0.3)`;
+const nightColorTwo = `rgba(0, 0, 0, 1)`;
 
 export const dayBackgroundImageString = `linear-gradient(to right bottom, ${dayColorOne}, ${dayColorTwo}), url(https://picsum.photos/2000/1400)`;
 
