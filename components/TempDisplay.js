@@ -19,7 +19,14 @@ const TempDisplay = ({ weather, temperature, sunrise, sunset, isDaytime, timezon
       />
     )}
 
-    <SunsetIndicator sunrise={sunrise} sunset={sunset} isDaytime={isDaytime} timezone={timezone} />
+    {weather && (
+      <SunsetIndicator
+        sunrise={sunrise}
+        sunset={sunset}
+        isDaytime={isDaytime}
+        timezone={timezone}
+      />
+    )}
   </div>
 );
 
