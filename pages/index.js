@@ -2,13 +2,7 @@
 import axios from 'axios';
 import moment from 'moment-timezone';
 import { useState, useEffect } from 'react';
-import {
-  adjustLocationNameForTimezone,
-  DARK_THEME,
-  DATE_FORMAT,
-  LIGHT_THEME,
-  WEATHER_API_BASE_URL,
-} from '../constants/constants';
+import { DARK_THEME, DATE_FORMAT, LIGHT_THEME, WEATHER_API_BASE_URL } from '../constants/constants';
 import SearchForm from '../components/SearchForm';
 import TempDisplay from '../components/TempDisplay';
 import HeroLayout from '../components/HeroLayout';
@@ -16,6 +10,7 @@ import {
   getCurrentTimeInLocation,
   getEventTimeInLocation,
   convertKelvinToCelsius,
+  adjustLocationNameForTimezone,
 } from '../utilities/utilities';
 
 export const Home = () => {
