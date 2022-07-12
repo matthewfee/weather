@@ -41,6 +41,12 @@ export const Home = () => {
       locationString = 'Cambridge, UK';
     }
 
+    if (location === 'Cambridge, MA') {
+      locationString = 'Cambridge';
+    }
+
+    console.log('LOCATION', locationString, location);
+
     const requestURL = `${WEATHER_API_BASE_URL}?q=${locationString}&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`;
     try {
       const response = await axios.get(requestURL);
