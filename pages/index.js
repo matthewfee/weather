@@ -16,7 +16,7 @@ export const Home = () => {
   const [sunrise, setSunrise] = useState(null);
   const [sunset, setSunset] = useState(null);
   const [timezone, setTimezone] = useState(null);
-  const [isDaytime, setIsDaytime] = useState(true);
+  const [isDaytime, setIsDaytime] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleLocation = (e) => {

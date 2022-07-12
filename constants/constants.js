@@ -5,3 +5,13 @@ export const DARK_THEME = 'dark';
 export const LIGHT_THEME = 'light';
 
 export const DATE_FORMAT = 'YYYY-MM-DD HH:mm';
+
+const dayColorOne = `rgba(213, 246, 255, 0.2)`;
+const dayColorTwo = `rgba(3, 76, 140, 0.7)`;
+
+const nightColorOne = `rgba(242, 240, 136, 0.2)`;
+const nightColorTwo = `rgba(47, 47, 50, 0.95)`;
+
+export const dayBackgroundImageString = `linear-gradient(to right bottom, ${dayColorOne}, ${dayColorTwo}), url(https://placeimg.com/1000/800/arch)`;
+
+export const nightBackgroundImageString = `linear-gradient(to right bottom, ${nightColorOne}, ${nightColorTwo}), url(https://placeimg.com/1000/800/arch)`;

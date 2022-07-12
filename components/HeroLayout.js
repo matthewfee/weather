@@ -1,9 +1,14 @@
+import { dayBackgroundImageString, nightBackgroundImageString } from '../constants/constants';
+
 const HeroLayout = ({ children, isDaytime }) => (
   <div
     className="hero min-h-screen"
-    style={{ backgroundImage: 'url(https://placeimg.com/1000/800/arch)' }}
+    style={{
+      backgroundSize: 'cover',
+      backgroundImage: `${isDaytime ? dayBackgroundImageString : nightBackgroundImageString}`,
+    }}
   >
-    <div className={`hero-overlay ${isDaytime ? 'bg-opacity-60' : 'bg-opacity-95'}`} />
+    <div className="hero-overlay" />
     <div
       className="hero-content w-full text-center text-neutral-content
       max-w-md flex flex-col items-center rounded-md"
