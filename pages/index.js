@@ -41,7 +41,7 @@ export const Home = () => {
       const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
       if (userTimezone.includes('America')) {
-        locationString = 'Cambridge, MA';
+        locationString = 'Cambridge';
       } else {
         locationString = 'Cambridge, UK';
       }
