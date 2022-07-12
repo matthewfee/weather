@@ -38,14 +38,21 @@ export const Home = () => {
     let locationString = location;
 
     if (location === 'Cambridge') {
-      locationString = 'Cambridge, UK';
+      const date = new Date();
+      const userTimezoneOffset = date.getTimezoneOffset();
+
+      const isNearUSA = userTimezoneOffset >= 180;
+
+      if (isNearUSA) {
+        locationString = 'Cambridge, MA';
+      } else {
+        locationString = 'Cambridge, UK';
+      }
     }
 
     if (location === 'Cambridge, MA') {
       locationString = 'Cambridge';
     }
-
-    console.log('LOCATION', locationString, location);
 
     const requestURL = `${WEATHER_API_BASE_URL}?q=${locationString}&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`;
     try {
