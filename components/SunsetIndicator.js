@@ -27,9 +27,9 @@ const SunsetIndicator = ({ sunrise, sunset, isDaytime, timezone }) => {
   const timeUntilSunset = moment(currentString).to(sunsetString, 'hours');
   const timeUntilSunrise = moment(currentString).to(sunriseString, 'hours');
   return (
-    <div className="sun-time absolute top-full">
-      {!isDaytime && <div className="sunrise text-xl"> sunrise in {timeUntilSunrise}</div>}
-      {isDaytime && <div className="sunset text-xl">sunset in {timeUntilSunset}</div>}
+    <div className="sun-time absolute top-full text-white">
+      {!isDaytime && <div className="sunrise text-2xl"> sunrise in {timeUntilSunrise}</div>}
+      {isDaytime && <div className="sunset text-2xl">sunset in {timeUntilSunset}</div>}
     </div>
   );
 };
