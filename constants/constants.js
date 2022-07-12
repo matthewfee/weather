@@ -15,3 +15,26 @@ const nightColorTwo = `rgba(0, 0, 0, 1)`;
 export const dayBackgroundImageString = `linear-gradient(to right bottom, ${dayColorOne}, ${dayColorTwo}), url(https://picsum.photos/2000/1400)`;
 
 export const nightBackgroundImageString = `linear-gradient(to right bottom, ${nightColorOne}, ${nightColorTwo}), url(https://picsum.photos/2000/1400)`;
+
+export const Cambridge = 'Cambridge';
+
+export const adjustLocationNameForTimezone = (location) => {
+  let locationString = location;
+  if (location === 'Cambridge') {
+    const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    if (userTimezone.includes('America')) {
+      locationString = 'Cambridge';
+    } else {
+      locationString = 'Cambridge, UK';
+    }
+  }
+
+  // API does not recognize Cambridge, MA by default
+
+  if (location === 'Cambridge, MA') {
+    locationString = 'Cambridge';
+  }
+
+  return locationString;
+};

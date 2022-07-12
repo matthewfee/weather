@@ -2,7 +2,13 @@
 import axios from 'axios';
 import moment from 'moment-timezone';
 import { useState, useEffect } from 'react';
-import { DARK_THEME, DATE_FORMAT, LIGHT_THEME, WEATHER_API_BASE_URL } from '../constants/constants';
+import {
+  adjustLocationNameForTimezone,
+  DARK_THEME,
+  DATE_FORMAT,
+  LIGHT_THEME,
+  WEATHER_API_BASE_URL,
+} from '../constants/constants';
 import SearchForm from '../components/SearchForm';
 import TempDisplay from '../components/TempDisplay';
 import HeroLayout from '../components/HeroLayout';
@@ -35,23 +41,7 @@ export const Home = () => {
 
     setLoading(true);
 
-    let locationString = location;
-
-    if (location === 'Cambridge') {
-      const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-      if (userTimezone.includes('America')) {
-        locationString = 'Cambridge';
-      } else {
-        locationString = 'Cambridge, UK';
-      }
-    }
-
-    // API does not recognize Cambridge, MA by default
-
-    if (location === 'Cambridge, MA') {
-      locationString = 'Cambridge';
-    }
+    const locationString = adjustLocationNameForTimezone(location);
 
     const requestURL = `${WEATHER_API_BASE_URL}?q=${locationString}&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`;
     try {
