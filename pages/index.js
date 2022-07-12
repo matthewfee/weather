@@ -38,12 +38,9 @@ export const Home = () => {
     let locationString = location;
 
     if (location === 'Cambridge') {
-      const date = new Date();
-      const userTimezoneOffset = date.getTimezoneOffset();
+      const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-      const isNearUSA = userTimezoneOffset >= 180;
-
-      if (isNearUSA) {
+      if (!userTimezone.includes('America')) {
         locationString = 'Cambridge, MA';
       } else {
         locationString = 'Cambridge, UK';
