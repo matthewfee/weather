@@ -10,7 +10,7 @@ exports[`renders correctly 1`] = `
 
 exports[`renders correctly 2`] = `
 <div
-  className="hero hero-background h-screen min-h-[110vh] w-screen min-w-fit"
+  className="hero hero-background h-screen min-h-[110vh] w-screen min-w-fit transition"
   style={
     Object {
       "backgroundImage": "linear-gradient(to right bottom, rgba(213, 246, 255, 0.5), rgba(3, 76, 140, 1)), url(https://picsum.photos/2000/1400)",

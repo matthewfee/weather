@@ -2,16 +2,11 @@
 import axios from 'axios';
 import moment from 'moment-timezone';
 import { useState, useEffect } from 'react';
-import { DARK_THEME, DATE_FORMAT, LIGHT_THEME, WEATHER_API_BASE_URL } from '../constants/constants';
+import { DARK_THEME, LIGHT_THEME, WEATHER_API_BASE_URL } from '../constants/constants';
 import SearchForm from '../components/SearchForm';
 import TempDisplay from '../components/TempDisplay';
 import HeroLayout from '../components/HeroLayout';
-import {
-  getCurrentTimeInLocation,
-  getEventTimeInLocation,
-  convertKelvinToCelsius,
-  adjustLocationNameForTimezone,
-} from '../utilities/utilities';
+import { convertKelvinToCelsius, adjustLocationNameForTimezone } from '../utilities/utilities';
 
 export const Home = () => {
   const [location, setLocation] = useState('');
@@ -71,17 +66,11 @@ export const Home = () => {
         return;
       }
 
-      const currentTimeInLocation = getCurrentTimeInLocation(timezone);
-      const sunriseTimeInLocation = getEventTimeInLocation(sunrise, timezone);
-      const sunsetTimeInLocation = getEventTimeInLocation(sunset, timezone);
+      const isDaytimeInLocation = () => {
+        const currentUnix = Math.round(new Date().getTime() / 1000);
 
-      // convert to string format for calculation of whether it is day or night
-
-      const cSTring = currentTimeInLocation.clone().format(DATE_FORMAT);
-      const sunriseString = sunriseTimeInLocation.clone().format(DATE_FORMAT);
-      const setString = sunsetTimeInLocation.clone().format(DATE_FORMAT);
-
-      const isDaytimeInLocation = () => moment(cSTring).isBetween(sunriseString, setString);
+        return sunrise < currentUnix && currentUnix < sunset;
+      };
 
       // updates display for day and night in location
 
@@ -97,7 +86,7 @@ export const Home = () => {
   }, [sunset, sunrise, timezone]);
 
   return (
-    <div data-theme={theme}>
+    <div data-theme={theme} className="transition duration-1000">
       <HeroLayout isDaytime={isDaytime}>
         {weather && <h1>{isDaytime ? 'day' : 'night'}</h1>}
         {!weather && <h1 className="text-white">search the weather...</h1>}

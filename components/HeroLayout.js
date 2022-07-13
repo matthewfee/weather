@@ -2,7 +2,7 @@ import { dayBackgroundImageString, nightBackgroundImageString } from '../constan
 
 const HeroLayout = ({ children, isDaytime }) => (
   <div
-    className="hero hero-background h-screen min-h-[110vh] w-screen min-w-fit"
+    className="hero hero-background h-screen min-h-[110vh] w-screen min-w-fit transition"
     style={{
       backgroundSize: 'cover',
       backgroundPosition: 'center bottom',
