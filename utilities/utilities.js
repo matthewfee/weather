@@ -13,7 +13,6 @@ export const convertKelvinToCelsius = (kelvinTemp) => kelvinTemp - 273.15;
 export const adjustLocationNameForTimezone = (location) => {
   let locationString = location.trim();
 
-  console.log(locationString);
   if (location.trim() === 'Cambridge') {
     const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 

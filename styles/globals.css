@@ -2,12 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes opacity-fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  animation: opacity-fadeIn 1s linear;
 }
 
 a {
@@ -17,6 +27,7 @@ a {
 
 * {
   box-sizing: border-box;
+  animation: inherit;
 }
 
 .hero-background {
