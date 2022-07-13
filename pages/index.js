@@ -29,6 +29,7 @@ export const Home = () => {
     }
 
     setLoading(true);
+    setWeather('');
 
     const locationString = adjustLocationNameForTimezone(location);
 
@@ -95,14 +96,16 @@ export const Home = () => {
           searchLocation={searchLocation}
           loading={loading}
         />
-        <TempDisplay
-          weather={weather}
-          temperature={temperature}
-          sunrise={sunrise}
-          sunset={sunset}
-          isDaytime={isDaytime}
-          timezone={timezone}
-        />
+        {weather && (
+          <TempDisplay
+            weather={weather}
+            temperature={temperature}
+            sunrise={sunrise}
+            sunset={sunset}
+            isDaytime={isDaytime}
+            timezone={timezone}
+          />
+        )}
       </HeroLayout>
     </div>
   );
