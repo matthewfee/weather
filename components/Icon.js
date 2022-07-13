@@ -10,7 +10,8 @@ const Icon = ({ iconID }) => {
       alt="icon"
       width="150px"
       height="150px"
-      loading="lazy"
+      loading="eager"
+      priority
       placeholder=""
       quality={25}
     />
