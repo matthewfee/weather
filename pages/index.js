@@ -86,15 +86,14 @@ export const Home = () => {
 
   return (
     <div data-theme={theme} className="transition duration-1000">
-      <HeroLayout isDaytime={isDaytime}>
-        {weather && <h1>{isDaytime ? 'day' : 'night'}</h1>}
-        {!weather && <h1 className="text-white">search the weather...</h1>}
+      <HeroLayout isDaytime={isDaytime} className="relative">
         <SearchForm
           location={location}
           handleLocation={handleLocation}
           handleKeypress={handleKeypress}
           searchLocation={searchLocation}
           loading={loading}
+          weather={weather}
         />
         {weather && (
           <TempDisplay

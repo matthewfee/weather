@@ -1,8 +1,16 @@
 import Button from './Button';
 import Loader from './LoadingSpinner';
 
-const SearchForm = ({ location, handleLocation, handleKeypress, searchLocation, loading }) => (
+const SearchForm = ({
+  location,
+  handleLocation,
+  handleKeypress,
+  searchLocation,
+  loading,
+  weather,
+}) => (
   <div className="form-control w-full max-w-s flex-col items-center relative">
+    {!weather && <h1 className="text-white absolute top-[-50px]">search the weather...</h1>}
     <div className="input-group input-group-lg w-full flex justify-center p-0 m-0 ">
       <input
         type="text"
