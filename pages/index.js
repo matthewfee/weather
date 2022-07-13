@@ -36,7 +36,6 @@ export const Home = () => {
     try {
       const response = await axios.get(requestURL);
       const { data } = response;
-      console.log(data);
       setWeather(data.weather[0]);
       const celsiusTemp = Math.round(convertKelvinToCelsius(data.main.temp));
       setTemperature(celsiusTemp);
