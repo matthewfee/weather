@@ -8,6 +8,7 @@ const SearchForm = ({
   searchLocation,
   loading,
   weather,
+  isDaytime,
 }) => (
   <div className="form-control w-full max-w-s flex-col items-center relative">
     {!weather && <h1 className="text-white absolute top-[-50px]">search the weather...</h1>}
@@ -15,7 +16,9 @@ const SearchForm = ({
       <input
         type="text"
         placeholder="City"
-        className="input input-bordered input-lg input-primary text-2xl text-base-content max-w-[60vw]"
+        className={`input input-bordered input-lg input-primary text-2xl transition-color duration-[3000ms] ease-in-out max-w-[60vw] ${
+          isDaytime ? 'text-black bg-white' : `text-white bg-zinc-800`
+        }`}
         value={location}
         onChange={handleLocation}
         onKeyPress={handleKeypress}

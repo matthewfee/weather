@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { DARK_THEME, LIGHT_THEME, WEATHER_API_BASE_URL } from '../constants/constants';
+import { LIGHT_THEME, WEATHER_API_BASE_URL } from '../constants/constants';
 import SearchForm from '../components/SearchForm';
 import TempDisplay from '../components/TempDisplay';
 import HeroLayout from '../components/HeroLayout';
@@ -11,11 +11,10 @@ export const Home = () => {
   const [location, setLocation] = useState('');
   const [weather, setWeather] = useState(null);
   const [temperature, setTemperature] = useState(null);
-  const [theme, setTheme] = useState(LIGHT_THEME);
   const [sunrise, setSunrise] = useState(null);
   const [sunset, setSunset] = useState(null);
   const [timezone, setTimezone] = useState(null);
-  const [isDaytime, setIsDaytime] = useState(false);
+  const [isDaytime, setIsDaytime] = useState(true);
   const [loading, setLoading] = useState(false);
 
   const handleLocation = (e) => {
@@ -74,15 +73,8 @@ export const Home = () => {
       // updates display for day and night in location
 
       if (isDaytimeInLocation()) {
-        setTimeout(() => {
-          setTheme(LIGHT_THEME);
-        }, 1000);
-
         setIsDaytime(true);
       } else {
-        setTimeout(() => {
-          setTheme(DARK_THEME);
-        }, 1000);
         setIsDaytime(false);
       }
     };
@@ -90,7 +82,7 @@ export const Home = () => {
   }, [sunset, sunrise, timezone]);
 
   return (
-    <div data-theme={theme}>
+    <div data-theme={LIGHT_THEME}>
       <HeroLayout isDaytime={isDaytime} className="relative">
         <SearchForm
           location={location}
@@ -99,6 +91,7 @@ export const Home = () => {
           searchLocation={searchLocation}
           loading={loading}
           weather={weather}
+          isDaytime={isDaytime}
         />
 
         <TempDisplay
