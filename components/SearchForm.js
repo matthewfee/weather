@@ -7,11 +7,9 @@ const SearchForm = ({
   handleKeypress,
   searchLocation,
   loading,
-  weather,
   isDaytime,
 }) => (
   <div className="form-control w-full max-w-s flex-col items-center relative">
-    {!weather && <h1 className="text-white absolute top-[-50px]">search the weather...</h1>}
     <div className="input-group input-group-lg w-full flex justify-center p-0 m-0 ">
       <input
         type="text"

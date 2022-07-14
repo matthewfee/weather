@@ -101,6 +101,7 @@ export const Home = () => {
           sunset={sunset}
           isDaytime={isDaytime}
           timezone={timezone}
+          loading={loading}
         />
       </HeroLayout>
     </div>
