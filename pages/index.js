@@ -74,10 +74,15 @@ export const Home = () => {
       // updates display for day and night in location
 
       if (isDaytimeInLocation()) {
-        setTheme(LIGHT_THEME);
+        setTimeout(() => {
+          setTheme(LIGHT_THEME);
+        }, 1000);
+
         setIsDaytime(true);
       } else {
-        setTheme(DARK_THEME);
+        setTimeout(() => {
+          setTheme(DARK_THEME);
+        }, 1000);
         setIsDaytime(false);
       }
     };
@@ -85,7 +90,7 @@ export const Home = () => {
   }, [sunset, sunrise, timezone]);
 
   return (
-    <div data-theme={theme} className="transition duration-1000">
+    <div data-theme={theme}>
       <HeroLayout isDaytime={isDaytime} className="relative">
         <SearchForm
           location={location}
@@ -95,16 +100,15 @@ export const Home = () => {
           loading={loading}
           weather={weather}
         />
-        {weather && (
-          <TempDisplay
-            weather={weather}
-            temperature={temperature}
-            sunrise={sunrise}
-            sunset={sunset}
-            isDaytime={isDaytime}
-            timezone={timezone}
-          />
-        )}
+
+        <TempDisplay
+          weather={weather}
+          temperature={temperature}
+          sunrise={sunrise}
+          sunset={sunset}
+          isDaytime={isDaytime}
+          timezone={timezone}
+        />
       </HeroLayout>
     </div>
   );

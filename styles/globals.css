@@ -17,7 +17,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  animation: opacity-fadeIn 1s linear;
+  /* animation: opacity-fadeIn 1s linear; */
 }
 
 a {
@@ -28,6 +28,7 @@ a {
 * {
   box-sizing: border-box;
   animation: inherit;
+  /* transition: all 1s !important; */
 }
 
 .hero-background {
