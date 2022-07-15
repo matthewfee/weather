@@ -53,13 +53,13 @@ const WeatherInfo = ({
 
     {temperature && (
       <div className="temperature flex justify-center items-center md:h-36 h-28 max-w-1/4 md:pt-4 md:pr-4">
-        <span className="md:text-8xl text-6xl p-0 font-semibold">{temperature}</span>
+        <span className="md:text-8xl text-5xl p-0 font-semibold">{temperature}</span>
         <span className="text-6xl self-start mt-6">°</span>
       </div>
     )}
     {weather && (
-      <div className="city-container md:h-36 h-28 flex flex-col justify-center items-center text-center relative">
-        <h2 className="city-name md:text-5xl text-4xl md:pt-0 text-center tracking-wide">
+      <div className="city-container md:max-w-[200px] max-w-[100px] md:h-36 h-28 flex flex-col justify-center items-center text-center relative">
+        <h2 className="city-name md:text-5xl text-3xl md:pt-0 text-center tracking-wide">
           {location}
         </h2>
         <SunsetIndicator
