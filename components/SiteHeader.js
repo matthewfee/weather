@@ -1,6 +1,6 @@
 const SiteHeader = ({ weather }) => (
   <h1
-    className={`absolute transition-all tracking-widest font-semibold letter duration-1000 ease-in uppercase ${
+    className={`absolute tracking-widest font-semibold letter  uppercase ${
       weather
         ? 'opacity-50 h-0 top-[-100px] text-xl '
         : 'opacity-100 top-[-100px] text-4xl md:text-6xl text-white'
