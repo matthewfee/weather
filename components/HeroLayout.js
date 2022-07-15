@@ -54,7 +54,7 @@ const HeroLayout = ({ children, isDaytime, weather }) => {
         }}
       />
       <div
-        className={`hero-content text-center text-neutral-content transition-colors ease-in-out duration-[4000ms] h-0 border 
+        className={`hero-content text-center text-neutral-content transition-colors ease-in-out duration-[4000ms] h-0 border relative
 
       flex flex-col p-0 w-full max-w-[600px] m-0 rounded-xl shadow-2xl shadow-black/70 ${
         isDaytime ? 'bg-[#09243B]/60' : 'bg-blue-900/60'

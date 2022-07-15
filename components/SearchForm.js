@@ -12,7 +12,7 @@ const SearchForm = ({
 }) => (
   <div
     className={`form-control flex-col w-full justify-center items-center relative hover:opacity-100 rounded-none  transition-all duration-[1000ms] ease-in text-white ${
-      weather ? 'mt-0' : 'md:mt-16 mt-48'
+      weather ? 'mt-0' : 'md:mt-16 absolute bottom-0 mt-auto'
     }`}
   >
     <div className="input-group w-full input-group-lg flex justify-center items-center  m-0">
