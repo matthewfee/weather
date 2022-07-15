@@ -74,7 +74,7 @@ const WeatherInfo = ({
     {weather && (
       <div className="weather-icon flex flex-col justify-center pb-1 items-center relative w-1/4 md:h-36 h-28">
         <Icon iconID={weather?.icon} />
-        <div className="weather-description text-sm mt-2 text-center max-w-[100px] leading-none">
+        <div className="weather-description text-md mt-2 text-center max-w-[100px] leading-none">
           {weather?.description}
         </div>
       </div>
