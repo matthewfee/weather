@@ -20,7 +20,7 @@ const SearchForm = ({
       <input
         type="text"
         placeholder="Search your city..."
-        className={`input h-3rem p-4 border-black/50 text-center text-2xl rounded-none transition-color text-white duration-[2000ms] input-primary z-10 bg-[#09243B]/5 900/60 ease-in-out md:w-full  ${
+        className={`input h-3rem p-4 border-black/50 text-center text-2xl rounded-none transition-color text-white duration-[2000ms] input-primary z-10  bg-[#09243B]/5 900/60 ease-in-out md:w-full  ${
           weather ? 'w-full' : 'md:w-full'
         }  `}
         // ${
@@ -36,10 +36,10 @@ const SearchForm = ({
       />
 
       <Button
-        styles="btn btn-md w-full text-white bg-black w-[100px] opacity-90"
+        styles="btn btn-md w-full text-white bg-blue-900/75  w-[100px] opacity-90"
         callback={searchLocation}
       >
-        {!loading && <Image src="/icons/search.svg" height="30px" width="30px" />}
+        {!loading && <Image src="/icons/searchdark.svg" height="30px" width="30px" />}
       </Button>
     </div>
     {loading && (
