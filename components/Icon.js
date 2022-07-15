@@ -6,10 +6,10 @@ const Icon = ({ iconID }) => {
   }
   return (
     <Image
-      src={`/icons/${iconID}.png`}
+      src={`/icons/${iconID}.svg`}
       alt="icon"
-      width="150px"
-      height="150px"
+      width="60px"
+      height="60px"
       loading="eager"
       priority
       placeholder=""
