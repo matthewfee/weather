@@ -14,7 +14,7 @@ const WeatherInfo = ({
   weatherDetails,
 }) => (
   <div
-    className={`temperature temperature-result-container pt-4 m-0 relative text-xl container flex flex-wrap items-start md:justify-evenly justify-between px-4 md:px-8 text-white w-full transition-all duration-[1000ms] ease-in  ${
+    className={`temperature temperature-result-container pt-4 m-0 relative text-xl container flex flex-wrap items-start md:justify-evenly justify-evenly px-4 md:px-8 text-white w-full transition-all duration-[1000ms] ease-in  ${
       weather ? 'opacity-100 h-full blur-none' : 'opacity-0 h-0 blur-xl'
     } `}
   >
@@ -58,8 +58,8 @@ const WeatherInfo = ({
       </div>
     )}
     {weather && (
-      <div className="city-container md:max-w-[250px] max-w-[100px] md:h-36 h-28 flex flex-col justify-center items-center text-center relative">
-        <h2 className="city-name md:text-3xl text-3xl md:pt-0 text-center tracking-wide">
+      <div className="city-container md:max-w-[250px] max-w-[160px] md:h-36 h-28 flex flex-col justify-center items-center text-center relative">
+        <h2 className="city-name md:text-3xl text-2xl md:pt-0 text-center tracking-wide">
           {location}
         </h2>
         <SunsetIndicator
