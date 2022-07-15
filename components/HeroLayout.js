@@ -17,7 +17,6 @@ const HeroLayout = ({ children, isDaytime, weather }) => {
     }
 
     if (isDaytime && weather?.description?.includes('cloud')) {
-      console.log('CLOUDY');
       imageBackground = `url(${cloudy.src})`;
     }
 
@@ -28,8 +27,6 @@ const HeroLayout = ({ children, isDaytime, weather }) => {
     if (weather?.description?.includes('rain')) {
       imageBackground = `url(${rainy.src})`;
     }
-
-    console.log(imageBackground);
 
     setBackground(imageBackground);
   };
@@ -68,8 +65,5 @@ const HeroLayout = ({ children, isDaytime, weather }) => {
     </div>
   );
 };
-
-// box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.04);
-// backdrop-filter: blur(50px); #0788D9
 
 export default HeroLayout;
