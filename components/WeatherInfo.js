@@ -20,26 +20,26 @@ const WeatherInfo = ({
   >
     {weather && (
       <ul className="weather-details md:mt-4 flex flex-row justify-center items-center gap-0 md:h-20 h-16 md:p-2 rounded-md bg-slate-600/25 md:w-fit w-full mx-0 shadow-sm shadow-black/25">
-        <DetailItem styles="border-white/25 border-r">
+        <DetailItem styles="border-blue-400/25 border-r">
           Max <br />
           <span className="details-info text-base font-bold">
             {Math.round(convertKelvinToCelsius(weatherDetails?.temp_max))}°C
           </span>
         </DetailItem>
-        <DetailItem styles="border-white/25 border-r">
+        <DetailItem styles="border-blue-400/25 border-r">
           Min <br />
           <span className="details-info text-base font-bold">
             {Math.round(convertKelvinToCelsius(weatherDetails?.temp_min))}°C
           </span>
         </DetailItem>
 
-        <DetailItem styles="border-white/25 border-r">
+        <DetailItem styles="border-blue-400/25 border-r">
           Feels like <br />
           <span className="details-info text-base font-bold">
             {Math.round(convertKelvinToCelsius(weatherDetails?.feels_like))}°C
           </span>
         </DetailItem>
-        <DetailItem styles="border-white/25 border-r">
+        <DetailItem styles="border-blue-400/25 border-r">
           Pressure <br />{' '}
           <span className="details-info text-sm font-bold">{weatherDetails?.pressure} hPa</span>
         </DetailItem>
