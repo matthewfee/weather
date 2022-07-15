@@ -3,7 +3,7 @@ const SiteHeader = ({ weather }) => (
     className={`absolute transition-all tracking-widest font-semibold letter duration-1000 ease-in uppercase ${
       weather
         ? 'opacity-50 h-0 top-[-100px] text-xl '
-        : 'opacity-100 top-[-100px] text-4xl md:text-8xl text-white'
+        : 'opacity-100 top-[-100px] text-4xl md:text-6xl text-white'
     } text-white `}
   >
     Sky Search
