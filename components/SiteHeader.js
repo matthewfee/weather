@@ -1,5 +1,5 @@
 const SiteHeader = ({ weather }) => (
-  <h1
+  <h2
     className={`absolute tracking-widest text-center w-full font-semibold letter  uppercase ${
       weather
         ? 'opacity-50 h-0 top-[-100px] text-xl '
@@ -7,7 +7,7 @@ const SiteHeader = ({ weather }) => (
     } text-white `}
   >
     Sky Search
-  </h1>
+  </h2>
 );
 
 export default SiteHeader;

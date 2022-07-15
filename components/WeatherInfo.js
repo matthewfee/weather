@@ -24,7 +24,7 @@ const WeatherInfo = ({
         <ul className="weather-details mt-4 flex flex-row justify-center items-center gap-0 md:h-20 h-16 md:p-2 rounded-md bg-slate-600/25 w-full mx-0 shadow-sm shadow-black/25">
           <DetailItem styles="border-blue-400/25 border-r">
             <span className="flex items-center gap-1">
-              <Image src="/icons/max.svg" width="20px" height="20px" />
+              <Image alt="max-temp" src="/icons/max.svg" width="20px" height="20px" />
               Max
             </span>
             <span className="details-info text-base font-bold">
@@ -33,7 +33,7 @@ const WeatherInfo = ({
           </DetailItem>
           <DetailItem styles="border-blue-400/25 border-r">
             <span className="flex items-center gap-1">
-              <Image src="/icons/min.svg" width="20px" height="20px" />
+              <Image alt="min-temp" src="/icons/min.svg" width="20px" height="20px" />
               Min
             </span>
             <span className="details-info text-base font-bold">
@@ -43,7 +43,7 @@ const WeatherInfo = ({
 
           <DetailItem styles="border-blue-400/25 border-r">
             <span className="flex items-center gap-1">
-              <Image src="/icons/feelslike.svg" width="20px" height="20px" />
+              <Image alt="feels-like" src="/icons/feelslike.svg" width="20px" height="20px" />
               Feels like
             </span>
             <span className="details-info text-base font-bold">
@@ -53,6 +53,7 @@ const WeatherInfo = ({
           <DetailItem styles="border-blue-400/25 border-r">
             <span className="flex items-center gap-1">
               <Image
+                alt="pressure"
                 className="filter-white "
                 src="/icons/pressure.svg"
                 width="20px"
@@ -65,7 +66,7 @@ const WeatherInfo = ({
 
           <DetailItem>
             <span className="flex items-center">
-              <Image src="/icons/humidity.svg" width="20px" height="20px" />
+              <Image alt="humidity" src="/icons/humidity.svg" width="20px" height="20px" />
               Humidity <br />
             </span>
             <span className="details-info text-base font-bold">
