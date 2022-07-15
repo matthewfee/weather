@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import SunsetIndicator from './SunsetIndicator';
 import Icon from './Icon';
 import { convertKelvinToCelsius } from '../utilities/utilities';
@@ -45,7 +46,10 @@ const WeatherInfo = ({
         </DetailItem>
 
         <DetailItem>
-          Humidity <br />
+          <span className="flex items-center">
+            <Image src="/icons/humidity.svg" width="20px" height="20px" />
+            Humidity <br />
+          </span>
           <span className="details-info text-base font-bold">{weatherDetails?.humidity}%</span>{' '}
         </DetailItem>
       </ul>
