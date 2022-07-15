@@ -15,7 +15,7 @@ const WeatherInfo = ({
   weatherDetails,
 }) => (
   <div
-    className={`temperature temperature-result-container pt-4 m-0 relative text-xl container flex flex-wrap items-start md:justify-evenly justify-evenly px-4 md:px-8 text-white w-full transition-all duration-[1000ms] ease-in  ${
+    className={`temperature temperature-result-container pt-4 m-0 relative text-xl container flex flex-wrap items-start md:justify-evenly justify-evenly px-0 md:px-8 text-white w-full transition-all duration-[1000ms] ease-in  ${
       weather ? 'opacity-100 h-full blur-none' : 'opacity-0 h-0 blur-xl'
     } `}
   >
@@ -50,7 +50,10 @@ const WeatherInfo = ({
           </span>
         </DetailItem>
         <DetailItem styles="border-blue-400/25 border-r">
-          Pressure <br />{' '}
+          <span className="flex items-center gap-1">
+            <Image className="filter-white " src="/icons/pressure.svg" width="20px" height="20px" />
+            Pressure
+          </span>
           <span className="details-info text-sm font-bold">{weatherDetails?.pressure} hPa</span>
         </DetailItem>
 
