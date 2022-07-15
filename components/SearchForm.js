@@ -11,11 +11,11 @@ const SearchForm = ({
   weather,
 }) => (
   <div
-    className={`form-control flex-col w-full justify-center items-center relative hover:opacity-100 rounded-none  transition-all duration-[1000ms] ease-in text-white ${
-      weather ? 'mt-0' : 'md:mt-16 absolute bottom-0 mt-auto'
+    className={`form-control  rounded-md flex-col w-fill justify-center items-center relative hover:opacity-100 mx-8 my-1 bg-slate-600/25 transition-all duration-[1000ms] ease-in text-white ${
+      weather ? 'mt-0' : 'bottom-0 mt-auto'
     }`}
   >
-    <div className="input-group rounded-tl-none w-full input-group-lg flex justify-center items-center  m-0">
+    <div className="input-group  w-full input-group-lg flex justify-center items-center  m-0">
       <input
         type="text"
         placeholder="Search your city..."
