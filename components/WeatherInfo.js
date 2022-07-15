@@ -93,7 +93,7 @@ const WeatherInfo = ({
           <Icon iconID={weather?.icon} />
         </div>
 
-        <div className="weather-description text-sm mt-2 text-center max-w-[100px] leading-none">
+        <div className="weather-description text-sm mt-2 text-center max-w-[100px] leading-none font-bold">
           {weather?.description}
         </div>
       </div>
