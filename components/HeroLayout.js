@@ -3,6 +3,8 @@ import { nightBackgroundImageString } from '../constants/constants';
 import sunny from '../public/backgrounds/sunny.jpg';
 import cloudy from '../public/backgrounds/cloudy.jpg';
 import rainy from '../public/backgrounds/rainy.jpg';
+import night from '../public/backgrounds/night.jpg';
+import nightCloudy from '../public/backgrounds/nightCloudy.jpg';
 
 const HeroLayout = ({ children, isDaytime, weather }) => {
   const [background, setBackground] = useState(`url(${rainy.src})`);
@@ -10,9 +12,17 @@ const HeroLayout = ({ children, isDaytime, weather }) => {
   const getBackground = () => {
     let imageBackground = `url(${sunny.src})`;
 
-    if (weather?.description?.includes('clouds')) {
+    if (!isDaytime) {
+      imageBackground = `url(${night.src})`;
+    }
+
+    if (isDaytime && weather?.description?.includes('cloud')) {
       console.log('CLOUDY');
       imageBackground = `url(${cloudy.src})`;
+    }
+
+    if (!isDaytime && weather?.description?.includes('cloud')) {
+      imageBackground = `url(${nightCloudy.src})`;
     }
 
     if (weather?.description?.includes('rain')) {
@@ -26,7 +36,7 @@ const HeroLayout = ({ children, isDaytime, weather }) => {
 
   useEffect(() => {
     getBackground();
-  }, [weather]);
+  }, [weather, isDaytime]);
 
   return (
     <div
@@ -51,7 +61,7 @@ const HeroLayout = ({ children, isDaytime, weather }) => {
 
       flex flex-col p-0 w-full max-w-[600px] m-0 rounded-xl shadow-2xl shadow-black/70 ${
         isDaytime ? 'bg-[#09243B]/60' : 'bg-blue-900/60'
-      } ${weather ? 'h-[400px] opacity-100 border-black/50' : 'h-0 border-none'} `}
+      } ${weather ? 'md:h-[400px] h-[400px] opacity-100 border-black/50' : 'h-0 border-none'} `}
       >
         {children}
       </div>

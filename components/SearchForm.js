@@ -13,7 +13,7 @@ const SearchForm = ({
 }) => (
   <div
     className={`form-control flex-col w-full justify-center items-center relative hover:opacity-100 rounded-none  transition-all duration-[1000ms] ease-in text-white ${
-      weather ? 'mt-0' : 'mt-32'
+      weather ? 'mt-0' : 'md:mt-16 mt-48'
     }`}
   >
     <div className="input-group w-full input-group-lg flex justify-center items-center  m-0">
@@ -21,7 +21,7 @@ const SearchForm = ({
         type="text"
         placeholder="Search your city..."
         className={`input h-3rem p-4 border-black/50 text-center text-2xl rounded-none transition-color text-white duration-[2000ms] input-primary z-10  bg-[#09243B]/5 900/60 ease-in-out md:w-full  ${
-          weather ? 'w-full' : 'md:w-full'
+          weather ? 'w-full' : 'md:w-full w-[250px]'
         }  `}
         // ${
         //  isDaytime
