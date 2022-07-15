@@ -34,17 +34,10 @@ const SearchForm = ({
       />
 
       <Button
-        styles="btn btn-md flex flex-row search-button w-full text-white border-transparent bg-sky-800/90  w-[100px] opacity-90"
+        styles="btn btn-md btn-primary flex flex-row search-button w-full text-white w-[100px] opacity-90"
         callback={searchLocation}
       >
-        {!loading && (
-          <div className="h-full flex flex-row">
-            <span className="h-ful bg-transparent">
-              Search
-              <Image src="/icons/searchdark.svg" height="40px" width="40px" />
-            </span>
-          </div>
-        )}
+        {!loading && `Search`}
       </Button>
     </div>
     {loading && (

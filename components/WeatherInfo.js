@@ -86,7 +86,7 @@ const WeatherInfo = ({
       )}
       {weather && (
         <div className="city-container md:max-w-[250px] max-w-[160px] flex flex-col justify-between items-center text-center relative">
-          <h2 className="city-name md:text-3xl text-2xl text-[#B8E2FF] md:pt-0 text-center tracking-wide">
+          <h2 className="city-name md:text-2xl text-2xl md:pt-0 text-center tracking-wide text-[#80BBFF] font-semibold ">
             {location}
           </h2>
           <SunsetIndicator
