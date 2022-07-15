@@ -11,7 +11,7 @@ const TempDisplay = ({
   weatherDetails,
 }) => (
   <div
-    className={`temperature-result-container justify-center py-6 px-4 m-0 items-center border-2 transition-all duration-[4000ms] w-full ease-in border-red-600 ${
+    className={`temperature-result-container justify-center py-6 px-4 m-0 items-center border-2 transition-all duration-[4000ms] w-full ease-in ${
       weather ? 'h-full' : 'h-0'
     }`}
   >
