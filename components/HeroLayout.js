@@ -46,7 +46,7 @@ const HeroLayout = ({ children, isDaytime, weather }) => {
     >
       <div
         className={`hero-overlay ${
-          isDaytime ? `opacity-80` : `opacity-80`
+          isDaytime ? `opacity-60` : `opacity-60`
         }  transition-all ease-in-out duration-[2000ms] `}
         style={{
           backgroundColor: `${isDaytime ? '#F26B1D' : '#104040'}`,
@@ -55,9 +55,9 @@ const HeroLayout = ({ children, isDaytime, weather }) => {
       />
       <div
         className={`text-center text-neutral-content transition-colors ease-in-out duration-[4000ms] relative backdrop-blur
-      flex flex-col justify-between  p-0 w-full max-w-[600px] m-0 rounded-xl shadow-2xl shadow-black/70 ${
+      flex flex-col justify-between gap-4 p-0 w-full max-w-[550px] m-0 rounded-xl shadow-2xl shadow-black/70 ${
         isDaytime ? 'bg-[#09243B]/60' : 'bg-blue-900/60'
-      } ${weather ? 'opacity-100 h-[340px] border-black/50' : 'h-0 border-none'} `}
+      } ${weather ? 'opacity-100 h-fit border-black/50' : 'h-0 border-none'} `}
       >
         {children}
       </div>

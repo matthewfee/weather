@@ -15,13 +15,13 @@ const WeatherInfo = ({
   weatherDetails,
 }) => (
   <div
-    className={`m-0 relative flex-col items-center justify-between flex-nowrap px-0 md:px-8 text-white w-full h-fill transition-all duration-[1000ms] ease-in  ${
+    className={`m-0 relative flex-col items-center justify-between flex-nowrap px-4 md:px-8 text-white w-full h-fill transition-all duration-[1000ms] ease-in  ${
       weather ? 'opacity-100 blur-none' : 'opacity-0 h-0 blur-xl'
     } `}
   >
     {weather && (
       <div className="details-container flex justify-center items-center w-full px-0 mx-0">
-        <ul className="weather-details md:mt-4 flex flex-row justify-center items-center gap-0 md:h-20 h-16 md:p-2 rounded-md bg-slate-600/25 w-full mx-0 shadow-sm shadow-black/25">
+        <ul className="weather-details mt-4 flex flex-row justify-center items-center gap-0 md:h-20 h-16 md:p-2 rounded-md bg-slate-600/25 w-full mx-0 shadow-sm shadow-black/25">
           <DetailItem styles="border-blue-400/25 border-r">
             <span className="flex items-center gap-1">
               <Image src="/icons/max.svg" width="20px" height="20px" />
@@ -76,7 +76,7 @@ const WeatherInfo = ({
       </div>
     )}
 
-    <div className="weather-container-main md:px-4 flex flex-row flex-wrap justify-evenly items-center h-48">
+    <div className="weather-container-main md:px-4 flex flex-row flex-wrap justify-evenly items-center h-fill bg-slate-600/25 w-full mx-0 shadow-sm shadow-black/25 rounded my-2 py-4">
       {temperature && (
         <div className="temperature flex justify-center items-center   max-w-1/4 md:pr-4">
           <span className="md:text-8xl sm:text-7xl text-5xl p-0 font-semibold">{temperature}</span>

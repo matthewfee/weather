@@ -11,7 +11,7 @@ const SearchForm = ({
   weather,
 }) => (
   <div
-    className={`form-control flex-col my-0 w-full justify-center items-center relative hover:opacity-100 rounded-nonemx-1 transition-all duration-[1000ms] ease-in text-white ${
+    className={`form-control flex-col w-fill justify-center items-center relative hover:opacity-100 mx-2 my-1 bg-slate-600/25 rounded-nonemx-1 transition-all duration-[1000ms] ease-in text-white ${
       weather ? 'mt-0' : 'bottom-0 mt-auto'
     }`}
   >
