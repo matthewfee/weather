@@ -36,3 +36,12 @@ a {
 .hero-background {
   background-size: cover;
 }
+
+.input-group > .location-input {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.input-group > .btn.btn-md {
+  border-top-right-radius: 0;
+}
