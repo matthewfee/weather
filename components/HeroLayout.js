@@ -54,10 +54,10 @@ const HeroLayout = ({ children, isDaytime, weather }) => {
         }}
       />
       <div
-        className={`hero-content text-center text-neutral-content transition-colors ease-in-out duration-[4000ms] h-0 border relative backdrop-blur
-      flex flex-col p-0 w-full max-w-[600px] m-0 rounded-xl shadow-2xl shadow-black/70 ${
+        className={`text-center text-neutral-content transition-colors ease-in-out duration-[4000ms] relative backdrop-blur
+      flex flex-col justify-between  p-0 w-full max-w-[600px] m-0 rounded-xl shadow-2xl shadow-black/70 ${
         isDaytime ? 'bg-[#09243B]/60' : 'bg-blue-900/60'
-      } ${weather ? 'md:h-[400px] h-[400px] opacity-100 border-black/50' : 'h-0 border-none'} `}
+      } ${weather ? 'opacity-100 h-[340px] border-black/50' : 'h-0 border-none'} `}
       >
         {children}
       </div>
