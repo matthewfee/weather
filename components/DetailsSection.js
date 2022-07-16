@@ -3,7 +3,7 @@ import DetailItem from './DetailItem';
 import { convertKelvinToCelsius } from '../utilities/utilities';
 
 const DetailsSection = ({ weatherDetails }) => (
-  <div className="details-container flex justify-center items-center w-full px-0 mx-0">
+  <div className="details-container flex justify-center items-center w-full px-0 mx-0 backdrop-blur-sm">
     <ul className="weather-details mt-4 flex flex-row justify-center items-center gap-0 md:h-20 h-16 md:p-2 rounded-md bg-slate-600/25 w-full mx-0 shadow-sm shadow-black/25">
       <DetailItem styles="border-blue-400/25 border-r">
         <span className="flex items-center gap-1">
