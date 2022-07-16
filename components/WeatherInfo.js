@@ -42,7 +42,7 @@ const WeatherInfo = ({
           </DetailItem>
 
           <DetailItem styles="border-blue-400/25 border-r">
-            <span className="flex md:text-base items-center gap-1">
+            <span className="flex items-center gap-1">
               <Image alt="feels-like" src="/icons/feelslike.svg" width="20px" height="20px" />
               Feel
             </span>
