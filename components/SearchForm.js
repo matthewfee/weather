@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import Button from './Button';
 import Loader from './LoadingSpinner';
+import SearchInput from './SearchInput';
 
 const SearchForm = ({
   location,
@@ -16,17 +17,11 @@ const SearchForm = ({
     }`}
   >
     <div className="shadow-sm shadow-black/25 bg-slate-500/25 md:mx-4 w-[95%] mx-2 my-1 mb-2  rounded-md input-group input-group-lg flex justify-center items-center m-0 ">
-      <input
-        type="text"
-        htmlFor="location-input"
-        placeholder="Search your city..."
-        className={`input location-input h-3rem p-4 border-transparent text-center text-2xl  transition-color text-white duration-[2000ms] input-primary z-10 bg-[#09243B]/5 900/60 ease-in-out md:w-full placeholder:text-white/90  ${
-          weather ? 'w-full bg-[#09243B]/5' : 'bg-[#09243B]/80 md:w-full w-[250px]'
-        }  `}
+      <SearchInput
+        weather={weather}
         value={location}
         onChange={handleLocation}
         onKeyPress={handleKeypress}
-        required
       />
 
       <Button
