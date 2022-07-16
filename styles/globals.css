@@ -36,3 +36,34 @@ a {
 .hero-background {
   background-size: cover;
 }
+
+.css-2b097c-container {
+  width: 100%;
+}
+
+.css-yk16xz-control {
+  border-top-left-radius: 0.5rem !important;
+  border-bottom-left-radius: 0.5rem !important;
+}
+
+/* 
+.css-yk16xz-control::placeholder {
+  color: white !important;
+  font-size: 1.5rem;
+  line-height: 2rem;
+} */
+
+/* .css-1wa3eu0-placeholder {
+  color: white !important;
+  font-size: 1.5rem;
+  line-height: 2rem;
+} */
+
+/* .css-1pahdxg-control {
+  background-color: rgb(9 36 59 / 0.05) !important;
+} */
+
+.css-26l3qy-menu {
+  border-top-left-radius: 0.5rem !important;
+  border-bottom-left-radius: 0.5rem !important;
+}

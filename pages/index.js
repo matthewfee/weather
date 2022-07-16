@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import axios from 'axios';
+import Script from 'next/script';
 import { useState, useEffect } from 'react';
 import { WEATHER_API_BASE_URL } from '../constants/constants';
 import SearchForm from '../components/SearchForm';
@@ -21,7 +22,11 @@ export const Home = () => {
   const [loading, setLoading] = useState(false);
 
   const handleLocation = (e) => {
-    setLocation(e.target.value);
+    console.log(e);
+
+    if (e.label) {
+      setLocation(e.label);
+    }
   };
 
   const searchLocation = async () => {
@@ -88,6 +93,10 @@ export const Home = () => {
 
   return (
     <div data-theme="winter" className="font-lato">
+      <Script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkgAJfB1kr49rKEPdGFpbs4j9feMhK5Vo&libraries=places&callback=initMap"
+        strategy="beforeInteractive"
+      />
       <HeroLayout isDaytime={isDaytime} weather={weather}>
         <SiteHeader weather={weather} />
         <WeatherInfo
