@@ -11,14 +11,11 @@ const SearchForm = ({
   weather,
 }) => (
   <div
-    className={`location-input form-control shadow-sm shadow-black/25 rounded-md flex-col justify-center items-center relative hover:opacity-100 mx-4 my-1 mb-2 bg-slate-500/25 transition-all duration-[1000ms] ease-in text-white  ${
+    className={`location-input form-control shadow-sm shadow-black/25 rounded-md flex-col w-fit justify-center items-center relative hover:opacity-100 md:mx-4 mx-2 my-1 mb-2 bg-slate-500/25 transition-all duration-[1000ms] ease-in text-white  ${
       weather ? 'mt-0' : 'bottom-0 mt-auto'
     }`}
   >
-    {/* <label className="label absolute top-[-35px] text-center" htmlFor="location-input">
-      <span className="label-text text-white text-md ">City</span>
-    </label> */}
-    <div className="input-group w-full input-group-lg flex justify-center items-center m-0 ">
+    <div className="input-group input-group-lg flex justify-center items-center m-0 ">
       <input
         type="text"
         htmlFor="location-input"
