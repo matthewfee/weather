@@ -8,6 +8,7 @@ import nightCloudy from '../public/backgrounds/nightCloudy.jpg';
 import scatteredClouds from '../public/backgrounds/scatteredclouds.jpg';
 import fewClouds from '../public/backgrounds/fewclouds.jpg';
 import breakingClouds from '../public/backgrounds/breakingclouds.jpg';
+import clearSky from '../public/backgrounds/clear.jpg';
 
 const HeroLayout = ({ children, isDaytime, weather }) => {
   const [background, setBackground] = useState(`url(${rainy.src})`);
@@ -17,6 +18,10 @@ const HeroLayout = ({ children, isDaytime, weather }) => {
 
     if (!isDaytime) {
       imageBackground = `url(${night.src})`;
+    }
+
+    if (isDaytime && weather?.description?.includes('clear sky')) {
+      imageBackground = `url(${clearSky.src})`;
     }
 
     if (isDaytime && weather?.description?.includes('cloud')) {
