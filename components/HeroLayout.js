@@ -64,12 +64,13 @@ const HeroLayout = ({ children, isDaytime, weather }) => {
         backgroundImage: `${background}`,
       }}
     >
+      {/* // #F5C051 #F26B1D */}
       <div
         className={`hero-overlay ${
-          isDaytime ? `opacity-60` : `opacity-60`
+          isDaytime ? `opacity-20` : `opacity-30`
         }  transition-all ease-in-out duration-[2000ms] `}
         style={{
-          backgroundColor: `${isDaytime ? '#F26B1D' : '#104040'}`,
+          backgroundColor: `${isDaytime ? '#1AE9FF' : '#104040'}`,
           backgroundImage: `${nightBackgroundImageString}`,
         }}
       />
