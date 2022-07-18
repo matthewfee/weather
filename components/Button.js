@@ -1,5 +1,9 @@
 const Button = ({ callback, styles, children }) => (
-  <button className={`btn outline-none ${styles}`} onClick={callback} type="button">
+  <button
+    className={`btn outline-none focus:outline-1 focus:outline-white  ${styles}`}
+    onClick={callback}
+    type="button"
+  >
     {children}
   </button>
 );
