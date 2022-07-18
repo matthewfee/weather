@@ -31,3 +31,22 @@ export const adjustLocationNameForTimezone = (location) => {
 
   return locationString;
 };
+
+export const fixCityCapitalization = (cityName) => {
+  if (cityName.includes(',')) {
+    const arr = cityName.split(',');
+
+    const capitalizedArr = arr.map((item, index) => {
+      if (index !== 0) {
+        return item.toUpperCase();
+      }
+      return item.toLowerCase();
+    });
+
+    const capitalizedName = capitalizedArr.join(',');
+
+    return capitalizedName;
+  }
+
+  return cityName.toLowerCase();
+};

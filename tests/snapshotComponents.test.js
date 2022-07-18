@@ -2,6 +2,7 @@ import TestRenderer from 'react-test-renderer';
 import Button from '../components/Button';
 import HeroLayout from '../components/HeroLayout';
 import Icon from '../components/Icon';
+import Home from '../pages/index';
 
 it('renders correctly', () => {
   const tree = TestRenderer.create(
@@ -17,5 +18,10 @@ it('renders correctly', () => {
 
 it('renders correctly', () => {
   const tree = TestRenderer.create(<Icon iconID="04d" />).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+it('renders correctly', () => {
+  const tree = TestRenderer.create(<Home />).toJSON();
   expect(tree).toMatchSnapshot();
 });

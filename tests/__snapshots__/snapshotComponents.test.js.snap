@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <button
-  className="btn btn-primary btn-lg w-28"
+  className="btn outline-none disabled:text-white/50 focus:outline-1 focus:outline-white  btn-primary btn-lg w-28"
   onClick={[Function]}
   type="button"
 />
@@ -10,20 +10,27 @@ exports[`renders correctly 1`] = `
 
 exports[`renders correctly 2`] = `
 <div
-  className="hero hero-background h-screen min-h-[110vh] w-screen min-w-fit transition"
+  className="hero hero-background min-h-[110vh] w-screen min-w-fit "
   style={
     Object {
-      "backgroundImage": "linear-gradient(to right bottom, rgba(213, 246, 255, 0.5), rgba(3, 76, 140, 1)), url(https://picsum.photos/2000/1400)",
+      "backgroundImage": "url(/img.jpg)",
       "backgroundPosition": "center bottom",
       "backgroundSize": "cover",
     }
   }
 >
   <div
-    className="hero-overlay"
+    className="hero-overlay opacity-10  transition-all ease-linear duration-[2000ms] "
+    style={
+      Object {
+        "backgroundColor": "#1AE9FF",
+        "backgroundImage": "linear-gradient(to right bottom, rgba(50, 50, 50, 0), black)",
+      }
+    }
   />
   <div
-    className="hero-content w-full text-center text-neutral-content max-w-md flex flex-col items-center rounded-md p-0 m-0"
+    className="text-center text-neutral-content  ease-in-out relative  items-center
+      flex flex-col justify-between p-0 w-full max-w-[550px] m-0 rounded-xl shadow-2xl shadow-black/70 bg-[#09243B]/60 h-0 border-none "
   />
 </div>
 `;
@@ -66,7 +73,7 @@ exports[`renders correctly 3`] = `
     <img
       alt=""
       aria-hidden={true}
-      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27150%27%20height=%27150%27/%3e"
+      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2760%27%20height=%2760%27/%3e"
       style={
         Object {
           "background": "none",
@@ -88,7 +95,8 @@ exports[`renders correctly 3`] = `
     decoding="async"
     onError={[Function]}
     onLoad={[Function]}
-    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+    src="/icons/04d.svg"
+    srcSet="/icons/04d.svg 1x, /icons/04d.svg 2x"
     style={
       Object {
         "border": "none",
@@ -112,37 +120,65 @@ exports[`renders correctly 3`] = `
       }
     }
   />
-  <noscript>
-    <img
-      alt="icon"
-      data-nimg="intrinsic"
-      decoding="async"
-      loading="lazy"
-      src="/_next/image?url=%2Ficons%2F04d.png&w=384&q=75"
-      srcSet="/_next/image?url=%2Ficons%2F04d.png&w=256&q=75 1x, /_next/image?url=%2Ficons%2F04d.png&w=384&q=75 2x"
+</span>
+`;
+
+exports[`renders correctly 4`] = `
+<div
+  className="font-lato"
+  data-theme="winter"
+>
+  <div
+    className="hero hero-background min-h-[110vh] w-screen min-w-fit "
+    style={
+      Object {
+        "backgroundImage": "url(/img.jpg)",
+        "backgroundPosition": "center bottom",
+        "backgroundSize": "cover",
+      }
+    }
+  >
+    <div
+      className="hero-overlay opacity-10  transition-all ease-linear duration-[2000ms] "
       style={
         Object {
-          "border": "none",
-          "bottom": 0,
-          "boxSizing": "border-box",
-          "display": "block",
-          "height": 0,
-          "left": 0,
-          "margin": "auto",
-          "maxHeight": "100%",
-          "maxWidth": "100%",
-          "minHeight": "100%",
-          "minWidth": "100%",
-          "objectFit": undefined,
-          "objectPosition": undefined,
-          "padding": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-          "width": 0,
+          "backgroundColor": "#1AE9FF",
+          "backgroundImage": "linear-gradient(to right bottom, rgba(50, 50, 50, 0), black)",
         }
       }
     />
-  </noscript>
-</span>
+    <div
+      className="text-center text-neutral-content  ease-in-out relative  items-center
+      flex flex-col justify-between p-0 w-full max-w-[550px] m-0 rounded-xl shadow-2xl shadow-black/70 bg-[#09243B]/60 h-0 border-none "
+    >
+      <h2
+        className="absolute tracking-widest text-center w-fit rounded px-2 font-bold letter uppercase opacity-100 top-[-100px] text-3xl md:text-6xl text-white no-wra"
+      >
+        Sky Search
+      </h2>
+      <div
+        className="location-input form-control flex-col justify-center gap-4 items-center relative text-white my-4  bottom-0 mt-auto"
+      >
+        <input
+          className="location-input h-[3rem] max-w-[16rem] bg-[#238CE8] rounded-md backdrop-blur-2xl p-4 text-center text-2xl text-white duration-[2000ms] focus:outline-white/25 input-primary placeholder:text-white/50  bg-opacity-50  "
+          htmlFor="location-input"
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          placeholder="city"
+          required={true}
+          type="text"
+          value=""
+        />
+        <button
+          className="btn outline-none disabled:text-white/50 focus:outline-1 focus:outline-white  bg-[#238CE8]/20 hover:bg-[#238CE8]/75 border-none btn-md flex flex-row w-full text-white w-[100px]"
+          disabled={true}
+          onClick={[Function]}
+          type="button"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 `;
