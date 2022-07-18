@@ -7,21 +7,27 @@ import WeatherInfo from '../components/WeatherInfo';
 import HeroLayout from '../components/HeroLayout';
 import { convertKelvinToCelsius, adjustLocationNameForTimezone } from '../utilities/utilities';
 import SiteHeader from '../components/SiteHeader';
+import React from 'react';
+
+interface WeatherTypes {
+  icon: string;
+  description: string;
+}
 
 export const Home = () => {
   const [location, setLocation] = useState('');
   const [locationHeader, setLocationHeader] = useState('');
-  const [weather, setWeather] = useState(null);
+  const [weather, setWeather] = useState<WeatherTypes | null>(null);
   const [weatherDetails, setWeatherDetails] = useState(null);
-  const [temperature, setTemperature] = useState(null);
+  const [temperature, setTemperature] = useState<number | null>(null);
   const [sunrise, setSunrise] = useState(null);
   const [sunset, setSunset] = useState(null);
   const [timezone, setTimezone] = useState(null);
   const [isDaytime, setIsDaytime] = useState(true);
   const [loading, setLoading] = useState(false);
 
-  const handleLocation = (e) => {
-    setLocation(e.target.value);
+  const handleLocation = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setLocation(event.target.value);
   };
 
   const searchLocation = async () => {
@@ -40,7 +46,7 @@ export const Home = () => {
       const { data } = response;
       setWeather(data.weather[0]);
       setWeatherDetails(data.main);
-      console.log(data);
+
       const celsiusTemp = Math.round(convertKelvinToCelsius(data.main.temp));
       setTemperature(celsiusTemp);
 
@@ -60,7 +66,7 @@ export const Home = () => {
     }
   };
 
-  const handleKeypress = (e) => {
+  const handleKeypress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       searchLocation();
     }
@@ -76,7 +82,10 @@ export const Home = () => {
 
       const isDaytimeInLocation = () => {
         const currentUnix = Math.round(new Date().getTime() / 1000);
-        return sunrise < currentUnix && currentUnix < sunset;
+
+        if (sunrise && sunset) {
+          return sunrise < currentUnix && currentUnix < sunset;
+        }
       };
 
       // updates state for day and night in location
@@ -93,7 +102,7 @@ export const Home = () => {
   return (
     <div data-theme="winter" className="font-lato">
       <HeroLayout isDaytime={isDaytime} weather={weather}>
-        {!weather && <SiteHeader weather={weather} />}
+        {!weather && <SiteHeader />}
         {weather && (
           <WeatherInfo
             weather={weather}
@@ -114,7 +123,6 @@ export const Home = () => {
           searchLocation={searchLocation}
           loading={loading}
           weather={weather}
-          isDaytime={isDaytime}
         />
       </HeroLayout>
     </div>

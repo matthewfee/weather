@@ -1,8 +1,15 @@
-import moment from 'moment';
+import moment, { Moment } from 'moment';
 import { DATE_FORMAT } from '../constants/constants';
 import { getCurrentTimeInLocation, getEventTimeInLocation } from '../utilities/utilities';
 
-const SunsetIndicator = ({ sunrise, sunset, isDaytime, timezone }) => {
+interface SunsetIndicatorTypes {
+  sunrise: number | null;
+  sunset: number | null;
+  isDaytime: boolean;
+  timezone: number | null;
+}
+
+const SunsetIndicator = ({ sunrise, sunset, isDaytime, timezone }: SunsetIndicatorTypes) => {
   const currentTimeInLocation = getCurrentTimeInLocation(timezone);
   const sunriseTimeInLocation = getEventTimeInLocation(sunrise, timezone);
   const sunsetTimeInLocation = getEventTimeInLocation(sunset, timezone);
@@ -24,8 +31,9 @@ const SunsetIndicator = ({ sunrise, sunset, isDaytime, timezone }) => {
   const sunriseString = sunriseTimeInLocation.clone().format(DATE_FORMAT);
   const sunsetString = sunsetTimeInLocation.clone().format(DATE_FORMAT);
 
-  const timeUntilSunset = moment(currentString).to(sunsetString, 'hours');
-  const timeUntilSunrise = moment(currentString).to(sunriseString, 'hours');
+  const timeUntilSunset: string = moment(currentString).to(sunsetString);
+  const timeUntilSunrise: string = moment(currentString).to(sunriseString);
+
   return (
     <div className="sun-time text-sm mt-4 font-bold text-white">
       {!isDaytime && <div className="sunrise"> sunrise in {timeUntilSunrise}</div>}
