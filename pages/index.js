@@ -48,7 +48,8 @@ export const Home = () => {
       setSunset(data.sys.sunset);
       setTimezone(data.timezone);
       setLoading(false);
-      setLocationHeader(location);
+      setLocationHeader(location.toLowerCase());
+      setLocation('');
     } catch (error) {
       console.error(error);
       setLoading(false);
@@ -63,8 +64,6 @@ export const Home = () => {
 
   useEffect(() => {
     const calculateTimeDifferences = () => {
-      // calculates UTC offset for location
-
       if (!weather) {
         return;
       }
