@@ -3,8 +3,8 @@ const SearchInput = ({ weather, value, onChange, onKeyPress }) => (
     type="text"
     htmlFor="location-input"
     placeholder="Search your city..."
-    className={`input location-input h-3rem p-4 border-transparent text-center text-2xl w-[100%]  transition-color text-white duration-[2000ms] input-primary z-10 bg-[#09243B]/5 900/60 ease-in-out md:w-full placeholder:text-white/90  ${
-      weather ? 'w-full bg-[#09243B]/5' : 'bg-[#09243B]/80 md:w-full'
+    className={`location-input h-[3rem] rounded-md p-4 text-center text-2xl text-white duration-[2000ms] border border-black/5 focus:outline-none bg-[#09243B]/70 input-primary md:w-full placeholder:text-white/90  ${
+      weather ? 'border-2 border-black' : 'bg-[#09243B]/70'
     }  `}
     value={value}
     onChange={onChange}

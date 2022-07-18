@@ -89,7 +89,7 @@ export const Home = () => {
   return (
     <div data-theme="winter" className="font-lato">
       <HeroLayout isDaytime={isDaytime} weather={weather}>
-        <SiteHeader weather={weather} />
+        {!weather && <SiteHeader weather={weather} />}
         <WeatherInfo
           weather={weather}
           temperature={temperature}
