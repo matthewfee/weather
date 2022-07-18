@@ -70,7 +70,6 @@ const HeroLayout = ({ children, isDaytime, weather }) => {
         backgroundImage: `${background}`,
       }}
     >
-      {/* // #F5C051 #F26B1D */}
       <div
         className={`hero-overlay ${
           isDaytime ? `opacity-10` : `opacity-70`

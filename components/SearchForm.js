@@ -26,6 +26,7 @@ const SearchForm = ({
     <Button
       styles="bg-[#238CE8]/20 hover:bg-[#238CE8]/75 border-none btn-md flex flex-row w-full text-white w-[100px]"
       callback={searchLocation}
+      disabled={location === ''}
     >
       {!loading && `Search`}
       {loading && (
