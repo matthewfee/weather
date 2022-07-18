@@ -6,13 +6,13 @@ const SearchInput = ({ value, onChange, weather, onKeyPress }) => (
   //     weather ? 'w-full bg-[#09243B]/5' : 'bg-[#09243B]/80 md:w-full'
   //   }`}
   // >
-  <>
-    <GooglePlacesAutocomplete
-      selectProps={{ value, onChange }}
-      apiKey="AIzaSyCkgAJfB1kr49rKEPdGFpbs4j9feMhK5Vo"
-    />
 
-    {/* <input
+  <GooglePlacesAutocomplete
+    selectProps={{ value, onChange }}
+    apiKey="AIzaSyCkgAJfB1kr49rKEPdGFpbs4j9feMhK5Vo"
+  />
+
+  /* <input
       type="text"
       htmlFor="location-input"
       placeholder="Search your city..."
@@ -23,8 +23,7 @@ const SearchInput = ({ value, onChange, weather, onKeyPress }) => (
       onChange={onChange}
       onKeyPress={onKeyPress}
       required
-    /> */}
-  </>
+    /> */
 );
 
 export default SearchInput;
