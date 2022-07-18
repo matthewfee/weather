@@ -2,7 +2,6 @@
 import Button from './Button';
 import Loader from './LoadingSpinner';
 import SearchInput from './SearchInput';
-import { blueLightBackgroundColor } from '../constants/constants';
 
 const SearchForm = ({
   location,
@@ -13,8 +12,8 @@ const SearchForm = ({
   weather,
 }) => (
   <div
-    className={`location-input form-control flex-col justify-center gap-2 items-center relative transition-all duration-[1000ms] ease-in text-white my-4  ${
-      weather ? 'mt-0' : 'bottom-0 mt-auto'
+    className={`location-input form-control flex-col justify-center gap-2 items-center relative text-white my-4  ${
+      weather ? 'mt-4' : 'bottom-0 mt-auto'
     }`}
   >
     <SearchInput
@@ -25,7 +24,7 @@ const SearchForm = ({
     />
 
     <Button
-      styles={`bg-[${blueLightBackgroundColor}]/20 border-black/25 btn-md flex flex-row w-full text-white w-[100px]`}
+      styles="bg-[#238CE8]/20 hover:bg-[#238CE8]/75 border-none btn-md flex flex-row w-full text-white w-[100px]"
       callback={searchLocation}
     >
       {!loading && `Search`}
