@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { nightBackgroundImageString } from '../constants/constants';
+import { nightBackgroundImageString, dayBackgroundImageString } from '../constants/constants';
 import sunny from '../public/backgrounds/sunny.jpg';
 import cloudy from '../public/backgrounds/cloudy.jpg';
 import rainy from '../public/backgrounds/rainy.jpg';
@@ -73,18 +73,18 @@ const HeroLayout = ({ children, isDaytime, weather }) => {
       {/* // #F5C051 #F26B1D */}
       <div
         className={`hero-overlay ${
-          isDaytime ? `opacity-20` : `opacity-30`
-        }  transition-all ease-in-out duration-[4000ms] `}
+          isDaytime ? `opacity-10` : `opacity-70`
+        }  transition-all ease-linear duration-[2000ms] `}
         style={{
           backgroundColor: `${isDaytime ? '#1AE9FF' : '#104040'}`,
           backgroundImage: `${nightBackgroundImageString}`,
         }}
       />
       <div
-        className={`text-center text-neutral-content transition-colors ease-in-out duration-[2000ms] relative  items-center
+        className={`text-center text-neutral-content  ease-in-out relative  items-center
       flex flex-col justify-between p-0 w-full max-w-[550px] m-0 rounded-xl shadow-2xl shadow-black/70 ${
         isDaytime ? 'bg-[#09243B]/60' : 'bg-blue-900/60'
-      } ${weather ? 'opacity-100 h-fit border-black/50' : 'h-0 border-none'} `}
+      } ${weather ? 'h-fit border-black/50' : 'h-0 border-none'} `}
       >
         {children}
       </div>

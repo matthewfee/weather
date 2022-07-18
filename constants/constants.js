@@ -6,8 +6,8 @@ export const LIGHT_THEME = 'light';
 
 export const DATE_FORMAT = 'YYYY-MM-DD HH:mm';
 
-const dayColorOne = `#F26B1D`;
-const dayColorTwo = `rgba(3, 76, 140)`;
+const dayColorOne = `#ABDCFF`;
+const dayColorTwo = `#0396FF`;
 
 const nightColorOne = `rgba(50, 50, 50, 0)`;
 const nightColorTwo = `black`;
