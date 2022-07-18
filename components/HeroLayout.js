@@ -11,7 +11,7 @@ import breakingClouds from '../public/backgrounds/breakingclouds.jpg';
 import clearSky from '../public/backgrounds/clear.jpg';
 
 const HeroLayout = ({ children, isDaytime, weather }) => {
-  const [background, setBackground] = useState(`url(${rainy.src})`);
+  const [background, setBackground] = useState(`url(${sunny.src})`);
 
   const getBackground = () => {
     let imageBackground = `url(${sunny.src})`;
