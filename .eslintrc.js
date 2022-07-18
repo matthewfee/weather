@@ -10,6 +10,7 @@ module.exports = {
     'prettier',
     'plugin:react/jsx-runtime',
     'plugin:@typescript-eslint/recommended',
+    'next/core-web-vitals',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
