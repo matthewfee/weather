@@ -6,7 +6,12 @@ import Home from '../pages/index.tsx';
 
 it('renders correctly', () => {
   const tree = TestRenderer.create(
-    <Button callback={() => {}} styles="btn-primary btn-lg w-28" />
+    <Button
+      callback={() => {
+        console.log('test');
+      }}
+      styles="btn-primary btn-lg w-28"
+    />
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });
