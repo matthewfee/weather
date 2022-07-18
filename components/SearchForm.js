@@ -12,7 +12,7 @@ const SearchForm = ({
   weather,
 }) => (
   <div
-    className={`location-input form-control flex-col justify-center gap-2 items-center relative text-white my-4  ${
+    className={`location-input form-control flex-col justify-center gap-4 items-center relative text-white my-4  ${
       weather ? 'mt-4' : 'bottom-0 mt-auto'
     }`}
   >
