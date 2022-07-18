@@ -16,6 +16,5 @@ test('getEvenTimeInLocation should return same time with 1 hour UTC adjustment',
 test('getEvenTimeInLocation should return same time with -5 hour UTC adjustment', () => {
   const momentTime = moment.utc(1657610077).valueOf() * 1000;
 
-  console.log(getEventTimeInLocation);
   expect(getEventTimeInLocation(1657628077, -18000).valueOf()).toBe(momentTime);
 });

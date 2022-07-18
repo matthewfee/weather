@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
 import { nightBackgroundImageString } from '../constants/constants';
 import sunny from '../public/backgrounds/sunny.jpg';

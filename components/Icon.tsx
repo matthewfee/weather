@@ -1,4 +1,5 @@
 import Image from 'next/dist/client/image';
+import React from 'react';
 
 const Icon = ({ iconID }) => {
   if (!iconID) {
@@ -12,7 +13,6 @@ const Icon = ({ iconID }) => {
       height="60px"
       loading="eager"
       priority
-      placeholder=""
       quality={25}
     />
   );

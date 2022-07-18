@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
+import React from 'react';
 import Button from './Button';
 import Loader from './LoadingSpinner';
 import SearchInput from './SearchInput';

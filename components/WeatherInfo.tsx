@@ -1,3 +1,4 @@
+import React from 'react';
 import SunsetIndicator from './SunsetIndicator';
 import DetailsSection from './DetailsSection';
 import TemperatureContainer from './TemperatureContainer';

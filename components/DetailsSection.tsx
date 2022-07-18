@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import DetailItem from './DetailItem';
 import { convertKelvinToCelsius } from '../utilities/utilities';
+import React from 'react';
 
 const DetailsSection = ({ weatherDetails }) => (
   <div className="details-container flex justify-center items-center w-full px-0 mx-0 backdrop-blur-sm">
@@ -47,12 +48,12 @@ const DetailsSection = ({ weatherDetails }) => (
         <span className="details-info text-base font-bold">{weatherDetails?.pressure}</span>
       </DetailItem>
 
-      <DetailItem>
+      <DetailItem styles="">
         <span className="flex items-center">
           <Image alt="humidity" src="/icons/humidity.svg" width="20px" height="20px" />
           Humidity <br />
         </span>
-        <span className="details-info text-base font-bold">{weatherDetails?.humidity}%</span>{' '}
+        <span className="details-info text-base font-bold">{weatherDetails?.humidity}%</span>
       </DetailItem>
     </ul>
   </div>
