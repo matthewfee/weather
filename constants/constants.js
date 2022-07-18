@@ -21,3 +21,5 @@ export const Cambridge = 'Cambridge';
 export const sunsetColor = '#F26B1D';
 
 export const moonlightColor = '#1D7373';
+
+export const blueLightBackgroundColor = '#238CE8';

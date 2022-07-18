@@ -2,6 +2,7 @@
 import Button from './Button';
 import Loader from './LoadingSpinner';
 import SearchInput from './SearchInput';
+import { blueLightBackgroundColor } from '../constants/constants';
 
 const SearchForm = ({
   location,
@@ -24,7 +25,7 @@ const SearchForm = ({
     />
 
     <Button
-      styles="bg-[#09243B]/70 border-black/25 btn-md flex flex-row w-full text-white w-[100px]"
+      styles={`bg-[${blueLightBackgroundColor}]/20 border-black/25 btn-md flex flex-row w-full text-white w-[100px]`}
       callback={searchLocation}
     >
       {!loading && `Search`}
