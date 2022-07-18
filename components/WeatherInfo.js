@@ -17,21 +17,19 @@ const WeatherInfo = ({
   weatherDetails,
 }) => (
   <WeatherSectionContainer weather={weather}>
-    {weather && <DetailsSection weatherDetails={weatherDetails} />}
+    <DetailsSection weatherDetails={weatherDetails} />
     <MainSectionContainer>
-      {temperature && <TemperatureContainer temperature={temperature} />}
-      {weather && (
-        <div className="md:max-w-[250px] max-w-[160px] flex flex-col justify-between items-center text-center relative">
-          <CityContainer location={location} isDaytime={isDaytime} />
-          <SunsetIndicator
-            sunrise={sunrise}
-            sunset={sunset}
-            isDaytime={isDaytime}
-            timezone={timezone}
-          />
-        </div>
-      )}
-      {weather && <IconContainer weather={weather} />}
+      <TemperatureContainer temperature={temperature} />
+      <div className="city-container md:max-w-[250px] max-w-[160px] flex flex-col justify-between items-center text-center relative">
+        <CityContainer location={location} isDaytime={isDaytime} />
+        <SunsetIndicator
+          sunrise={sunrise}
+          sunset={sunset}
+          isDaytime={isDaytime}
+          timezone={timezone}
+        />
+      </div>
+      <IconContainer weather={weather} />
     </MainSectionContainer>
   </WeatherSectionContainer>
 );

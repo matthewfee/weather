@@ -25,7 +25,7 @@ export const Home = () => {
   };
 
   const searchLocation = async () => {
-    // don't allow for API spamming
+    // do not execute if already loading a result
     if (loading) {
       return;
     }
@@ -43,6 +43,8 @@ export const Home = () => {
       console.log(data);
       const celsiusTemp = Math.round(convertKelvinToCelsius(data.main.temp));
       setTemperature(celsiusTemp);
+
+      // updates state with data and resets input form
 
       setSunrise(data.sys.sunrise);
       setSunset(data.sys.sunset);
@@ -63,6 +65,8 @@ export const Home = () => {
   };
 
   useEffect(() => {
+    // checks daytime status on new location searches
+
     const calculateTimeDifferences = () => {
       if (!weather) {
         return;
@@ -70,11 +74,10 @@ export const Home = () => {
 
       const isDaytimeInLocation = () => {
         const currentUnix = Math.round(new Date().getTime() / 1000);
-
         return sunrise < currentUnix && currentUnix < sunset;
       };
 
-      // updates display for day and night in location
+      // updates state for day and night in location
 
       if (isDaytimeInLocation()) {
         setIsDaytime(true);
@@ -89,16 +92,18 @@ export const Home = () => {
     <div data-theme="winter" className="font-lato">
       <HeroLayout isDaytime={isDaytime} weather={weather}>
         {!weather && <SiteHeader weather={weather} />}
-        <WeatherInfo
-          weather={weather}
-          temperature={temperature}
-          sunrise={sunrise}
-          sunset={sunset}
-          isDaytime={isDaytime}
-          timezone={timezone}
-          location={locationHeader}
-          weatherDetails={weatherDetails}
-        />
+        {weather && (
+          <WeatherInfo
+            weather={weather}
+            temperature={temperature}
+            sunrise={sunrise}
+            sunset={sunset}
+            isDaytime={isDaytime}
+            timezone={timezone}
+            location={locationHeader}
+            weatherDetails={weatherDetails}
+          />
+        )}
 
         <SearchForm
           location={location}
