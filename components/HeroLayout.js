@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { nightBackgroundImageString, dayBackgroundImageString } from '../constants/constants';
+import { nightBackgroundImageString } from '../constants/constants';
 import sunny from '../public/backgrounds/sunny.jpg';
 import cloudy from '../public/backgrounds/cloudy.jpg';
 import rainy from '../public/backgrounds/rainy.jpg';
