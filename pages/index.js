@@ -25,7 +25,7 @@ export const Home = () => {
   };
 
   const searchLocation = async () => {
-    // do not execute if already loading a result
+    // do not execute API call if already loading a result
     if (loading) {
       return;
     }
@@ -43,6 +43,8 @@ export const Home = () => {
       console.log(data);
       const celsiusTemp = Math.round(convertKelvinToCelsius(data.main.temp));
       setTemperature(celsiusTemp);
+
+      console.log(data);
 
       // updates state with data and resets input form
 
