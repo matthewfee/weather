@@ -9,10 +9,15 @@ import { convertKelvinToCelsius, adjustLocationNameForTimezone } from '../utilit
 import SiteHeader from '../components/SiteHeader';
 import React from 'react';
 
+interface WeatherTypes {
+  icon: string;
+  description: string;
+}
+
 export const Home = () => {
   const [location, setLocation] = useState('');
   const [locationHeader, setLocationHeader] = useState('');
-  const [weather, setWeather] = useState<object | null>(null);
+  const [weather, setWeather] = useState<WeatherTypes | null>(null);
   const [weatherDetails, setWeatherDetails] = useState(null);
   const [temperature, setTemperature] = useState<number | null>(null);
   const [sunrise, setSunrise] = useState(null);
@@ -21,8 +26,8 @@ export const Home = () => {
   const [isDaytime, setIsDaytime] = useState(true);
   const [loading, setLoading] = useState(false);
 
-  const handleLocation = (e) => {
-    setLocation(e.target.value);
+  const handleLocation = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setLocation(event.target.value);
   };
 
   const searchLocation = async () => {
@@ -61,7 +66,7 @@ export const Home = () => {
     }
   };
 
-  const handleKeypress = (e) => {
+  const handleKeypress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       searchLocation();
     }

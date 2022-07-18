@@ -4,6 +4,15 @@ import Button from './Button';
 import Loader from './LoadingSpinner';
 import SearchInput from './SearchInput';
 
+interface SearchFormTypes {
+  location: string;
+  handleLocation: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleKeypress: (event: React.KeyboardEvent) => void;
+  searchLocation: () => void;
+  loading: boolean;
+  weather: { icon: string; description: string } | null;
+}
+
 const SearchForm = ({
   location,
   handleLocation,
@@ -11,7 +20,7 @@ const SearchForm = ({
   searchLocation,
   loading,
   weather,
-}) => (
+}: SearchFormTypes) => (
   <div
     className={`location-input form-control flex-col justify-center gap-4 items-center relative text-white my-4  ${
       weather ? 'mt-4' : 'bottom-0 mt-auto'

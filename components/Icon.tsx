@@ -1,7 +1,11 @@
 import Image from 'next/dist/client/image';
 import React from 'react';
 
-const Icon = ({ iconID }) => {
+type iconIDtype = {
+  iconID: string;
+};
+
+const Icon = ({ iconID }: iconIDtype) => {
   if (!iconID) {
     return null;
   }

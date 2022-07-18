@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 
-const SearchInput = ({ weather, value, onChange, onKeyPress }) => (
+interface SearchInputTypes {
+  weather: { icon: string; description: string } | null;
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyPress: (event: React.KeyboardEvent) => void;
+}
+
+const SearchInput = ({ weather, value, onChange, onKeyPress }: SearchInputTypes) => (
   <input
     type="text"
     placeholder="city"

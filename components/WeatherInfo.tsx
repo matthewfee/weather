@@ -7,6 +7,26 @@ import IconContainer from './IconContainer';
 import WeatherSectionContainer from './WeatherSectionContainer';
 import MainSectionContainer from './MainSectionContainer';
 
+type WeatherInfoTypes = {
+  temperature: number | null;
+  location: string;
+  sunrise: number | null;
+  sunset: number | null;
+  isDaytime: boolean;
+  timezone: number | null;
+  weather: {
+    icon: string;
+    description: string;
+  };
+  weatherDetails: {
+    temp_max: number;
+    temp_min: number;
+    feels_like: number;
+    pressure: number;
+    humidity: number;
+  } | null;
+};
+
 const WeatherInfo = ({
   temperature,
   location,
@@ -16,7 +36,7 @@ const WeatherInfo = ({
   timezone,
   weather,
   weatherDetails,
-}) => (
+}: WeatherInfoTypes) => (
   <WeatherSectionContainer weather={weather}>
     <DetailsSection weatherDetails={weatherDetails} />
     <MainSectionContainer>

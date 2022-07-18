@@ -11,7 +11,15 @@ import fewClouds from '../public/backgrounds/fewclouds.jpg';
 import breakingClouds from '../public/backgrounds/breakingclouds.jpg';
 import clearSky from '../public/backgrounds/clear.jpg';
 
-const HeroLayout = ({ children, isDaytime, weather }) => {
+interface HeroLayoutTypes {
+  children: React.ReactNode;
+  isDaytime: boolean;
+  weather: {
+    description: string;
+  } | null;
+}
+
+const HeroLayout = ({ children, isDaytime, weather }: HeroLayoutTypes) => {
   const [background, setBackground] = useState(`url(${sunny.src})`);
 
   const getBackground = () => {

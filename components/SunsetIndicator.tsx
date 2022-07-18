@@ -2,7 +2,14 @@ import moment, { Moment } from 'moment';
 import { DATE_FORMAT } from '../constants/constants';
 import { getCurrentTimeInLocation, getEventTimeInLocation } from '../utilities/utilities';
 
-const SunsetIndicator = ({ sunrise, sunset, isDaytime, timezone }) => {
+interface SunsetIndicatorTypes {
+  sunrise: number | null;
+  sunset: number | null;
+  isDaytime: boolean;
+  timezone: number | null;
+}
+
+const SunsetIndicator = ({ sunrise, sunset, isDaytime, timezone }: SunsetIndicatorTypes) => {
   const currentTimeInLocation = getCurrentTimeInLocation(timezone);
   const sunriseTimeInLocation = getEventTimeInLocation(sunrise, timezone);
   const sunsetTimeInLocation = getEventTimeInLocation(sunset, timezone);
