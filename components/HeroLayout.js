@@ -16,36 +16,42 @@ const HeroLayout = ({ children, isDaytime, weather }) => {
   const getBackground = () => {
     let imageBackground = `url(${sunny.src})`;
 
+    // match to nighttime weather backgorunds
+
     if (!isDaytime) {
       imageBackground = `url(${night.src})`;
+
+      if (weather?.description?.includes('cloud')) {
+        imageBackground = `url(${nightCloudy.src})`;
+      }
     }
 
-    if (isDaytime && weather?.description?.includes('clear sky')) {
-      imageBackground = `url(${clearSky.src})`;
-    }
+    // match to daytime weather backgrounds
 
-    if (isDaytime && weather?.description?.includes('cloud')) {
-      imageBackground = `url(${cloudy.src})`;
-    }
+    if (isDaytime) {
+      if (weather?.description?.includes('clear sky')) {
+        imageBackground = `url(${clearSky.src})`;
+      }
 
-    if (isDaytime && weather?.description?.includes('scattered clouds')) {
-      imageBackground = `url(${scatteredClouds.src})`;
-    }
+      if (weather?.description?.includes('cloud')) {
+        imageBackground = `url(${cloudy.src})`;
+      }
 
-    if (isDaytime && weather?.description?.includes('few clouds')) {
-      imageBackground = `url(${fewClouds.src})`;
-    }
+      if (weather?.description?.includes('scattered clouds')) {
+        imageBackground = `url(${scatteredClouds.src})`;
+      }
 
-    if (isDaytime && weather?.description?.includes('broken clouds')) {
-      imageBackground = `url(${breakingClouds.src})`;
-    }
+      if (weather?.description?.includes('few clouds')) {
+        imageBackground = `url(${fewClouds.src})`;
+      }
 
-    if (!isDaytime && weather?.description?.includes('cloud')) {
-      imageBackground = `url(${nightCloudy.src})`;
-    }
+      if (weather?.description?.includes('broken clouds')) {
+        imageBackground = `url(${breakingClouds.src})`;
+      }
 
-    if (weather?.description?.includes('rain')) {
-      imageBackground = `url(${rainy.src})`;
+      if (weather?.description?.includes('rain')) {
+        imageBackground = `url(${rainy.src})`;
+      }
     }
 
     setBackground(imageBackground);
@@ -68,7 +74,7 @@ const HeroLayout = ({ children, isDaytime, weather }) => {
       <div
         className={`hero-overlay ${
           isDaytime ? `opacity-20` : `opacity-30`
-        }  transition-all ease-in-out duration-[2000ms] `}
+        }  transition-all ease-in-out duration-[4000ms] `}
         style={{
           backgroundColor: `${isDaytime ? '#1AE9FF' : '#104040'}`,
           backgroundImage: `${nightBackgroundImageString}`,
