@@ -11,9 +11,13 @@ type weatherDetailsType = {
     pressure: number;
     humidity: number;
   } | null;
+  dailyTemps: {
+    max: number,
+    min: number
+  } | null;
 };
 
-const DetailsSection = ({ weatherDetails }: weatherDetailsType) => (
+const DetailsSection = ({ weatherDetails, dailyTemps }: weatherDetailsType) => (
   <div className="details-container flex justify-center items-center w-full px-0 mx-0 backdrop-blur-sm">
     <ul className="weather-details mt-4 flex flex-row justify-center items-center gap-0 md:h-20 h-16 md:p-2 rounded-md bg-slate-600/25 w-full mx-0 shadow-sm shadow-black/25">
       <DetailItem styles="border-blue-400/25 border-r">
@@ -22,7 +26,7 @@ const DetailsSection = ({ weatherDetails }: weatherDetailsType) => (
           Max
         </span>
         <span className="details-info text-base font-bold">
-          {Math.round(convertKelvinToCelsius(weatherDetails?.temp_max))}°C
+          {Math.round(convertKelvinToCelsius(dailyTemps?.max))}°C
         </span>
       </DetailItem>
       <DetailItem styles="border-blue-400/25 border-r">
@@ -31,7 +35,7 @@ const DetailsSection = ({ weatherDetails }: weatherDetailsType) => (
           Min
         </span>
         <span className="details-info text-base font-bold">
-          {Math.round(convertKelvinToCelsius(weatherDetails?.temp_min))}°C
+          {Math.round(convertKelvinToCelsius(dailyTemps?.min))}°C
         </span>
       </DetailItem>
 
