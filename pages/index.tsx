@@ -19,6 +19,11 @@ type coordinatesType = {
   lon: number;
 } | null;
 
+type dailyTemps = {
+  max: number;
+  min: number;
+} | null;
+
 export const Home = () => {
   const [location, setLocation] = useState('');
   const [locationHeader, setLocationHeader] = useState('');
@@ -31,6 +36,7 @@ export const Home = () => {
   const [isDaytime, setIsDaytime] = useState(true);
   const [loading, setLoading] = useState(false);
   const [coordinates, setCoordinates] = useState<coordinatesType>(null);
+  const [dailyTemps, setDailyTemps] = useState<dailyTemps>(null);
 
   const handleLocation = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLocation(event.target.value);
@@ -78,13 +84,23 @@ export const Home = () => {
 
   // API Request for daily high and low using lat and lon data
 
-  // useEffect(() => {
-  //   if (coordinates) {
-  //     axios.get()
-
-  //   }
-
-  // }, [coordinates]);
+  useEffect(() => {
+    const getDailyForecast = async () => {
+      if (coordinates) {
+        try {
+          const response = await axios.get(
+            `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=current,minutely,hourly&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`
+          );
+          const data = await response.data.daily[0].temp;
+          console.log('DAILY', data);
+          setDailyTemps(data);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    };
+    getDailyForecast();
+  }, [coordinates]);
 
   const handleKeypress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
@@ -119,8 +135,6 @@ export const Home = () => {
     calculateTimeDifferences();
   }, [sunset, sunrise, timezone]);
 
-  console.log(coordinates?.lon, coordinates?.lat);
-
   return (
     <div data-theme="winter" className="font-lato">
       <HeroLayout isDaytime={isDaytime} weather={weather}>
@@ -135,6 +149,7 @@ export const Home = () => {
             timezone={timezone}
             location={locationHeader}
             weatherDetails={weatherDetails}
+            dailyTemps={dailyTemps}
           />
         )}
 

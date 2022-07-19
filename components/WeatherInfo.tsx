@@ -25,6 +25,10 @@ type WeatherInfoTypes = {
     pressure: number;
     humidity: number;
   } | null;
+  dailyTemps: {
+    max: number;
+    min: number;
+  } | null;
 };
 
 const WeatherInfo = ({
@@ -36,9 +40,10 @@ const WeatherInfo = ({
   timezone,
   weather,
   weatherDetails,
+  dailyTemps,
 }: WeatherInfoTypes) => (
   <WeatherSectionContainer weather={weather}>
-    <DetailsSection weatherDetails={weatherDetails} />
+    <DetailsSection weatherDetails={weatherDetails} dailyTemps={dailyTemps} />
     <MainSectionContainer>
       <TemperatureContainer temperature={temperature} />
       <div className="city-container md:max-w-[250px] max-w-[160px] flex flex-col justify-between items-center text-center relative">
