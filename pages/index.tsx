@@ -14,6 +14,11 @@ interface WeatherTypes {
   description: string;
 }
 
+type coordinatesType = {
+  lat: number;
+  lon: number;
+} | null;
+
 export const Home = () => {
   const [location, setLocation] = useState('');
   const [locationHeader, setLocationHeader] = useState('');
@@ -25,6 +30,7 @@ export const Home = () => {
   const [timezone, setTimezone] = useState(null);
   const [isDaytime, setIsDaytime] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [coordinates, setCoordinates] = useState<coordinatesType>(null);
 
   const handleLocation = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLocation(event.target.value);
@@ -57,6 +63,10 @@ export const Home = () => {
       setSunrise(data.sys.sunrise);
       setSunset(data.sys.sunset);
       setTimezone(data.timezone);
+
+      // set long coordinates
+
+      setCoordinates({ lon: data.coord.lon, lat: data.coord.lat });
       setLoading(false);
       setLocationHeader(location.toLowerCase());
       setLocation('');
@@ -65,6 +75,16 @@ export const Home = () => {
       setLoading(false);
     }
   };
+
+  // API Request for daily high and low using lat and lon data
+
+  // useEffect(() => {
+  //   if (coordinates) {
+  //     axios.get()
+
+  //   }
+
+  // }, [coordinates]);
 
   const handleKeypress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
@@ -98,6 +118,8 @@ export const Home = () => {
     };
     calculateTimeDifferences();
   }, [sunset, sunrise, timezone]);
+
+  console.log(coordinates?.lon, coordinates?.lat);
 
   return (
     <div data-theme="winter" className="font-lato">
